@@ -68,10 +68,13 @@
               {
                 "id": "",
                 "os": "",
-                "mac": [],
-                "ipv4": [],
+                "mac": [
+                ],
+                "ipv4": [
+                ],
                 "name": "",
-                "vlan": [],
+                "vlan": [
+                ],
                 "ghost": "",
                 "state": "",
                 "valid": "",
@@ -91,7 +94,8 @@
                 "approved": "",
                 "hostname": "",
                 "os_build": "",
-                "protocol": [],
+                "protocol": [
+                ],
                 "last_seen": "",
                 "site_name": "",
                 "subnet_id": "",
@@ -117,12 +121,16 @@
                 "os_service_pack": "",
                 "virtual_zone_id": "",
                 "domain_workgroup": "",
-                "custom_attributes": [],
+                "custom_attributes": [
+                ],
                 "virtual_zone_name": "",
-                "active_tasks_names": [],
-                "custom_informations": [],
+                "active_tasks_names": [
+                ],
+                "custom_informations": [
+                ],
                 "installed_antivirus": "",
-                "active_queries_names": []
+                "active_queries_names": [
+                ]
               }
             ],
             "count_total": "",
@@ -137,8 +145,10 @@
               {
                 "id": "",
                 "os": "",
-                "mac": [],
-                "ipv4": [],
+                "mac": [
+                ],
+                "ipv4": [
+                ],
                 "name": "",
                 "ghost": "",
                 "vendor": "",
@@ -229,10 +239,13 @@
       "output_schema": {
         "id": "",
         "os": "",
-        "mac": [],
-        "ipv4": [],
+        "mac": [
+        ],
+        "ipv4": [
+        ],
         "name": "",
-        "vlan": [],
+        "vlan": [
+        ],
         "ghost": "",
         "state": "",
         "valid": "",
@@ -250,10 +263,12 @@
         },
         "site_id": "",
         "approved": "",
-        "children": [],
+        "children": [
+        ],
         "hostname": "",
         "os_build": "",
-        "protocol": [],
+        "protocol": [
+        ],
         "last_seen": "",
         "site_name": "",
         "subnet_id": "",
@@ -273,7 +288,8 @@
         "display_name": "",
         "purdue_level": "",
         "special_hint": "",
-        "code_sections": [],
+        "code_sections": [
+        ],
         "criticality__": "",
         "edge_last_run": "",
         "insight_names": [
@@ -286,13 +302,17 @@
         "os_service_pack": "",
         "virtual_zone_id": "",
         "domain_workgroup": "",
-        "custom_attributes": [],
+        "custom_attributes": [
+        ],
         "usb_devices_count": "",
         "virtual_zone_name": "",
-        "active_tasks_names": [],
-        "custom_informations": [],
+        "active_tasks_names": [
+        ],
+        "custom_informations": [
+        ],
         "installed_antivirus": "",
-        "active_queries_names": [],
+        "active_queries_names": [
+        ],
         "installed_programs_count": ""
       },
       "title": "Get Asset Details",
@@ -363,7 +383,8 @@
                 "actionable_id": ""
               }
             ],
-            "actionable_diffs": [],
+            "actionable_diffs": [
+            ],
             "alert_indicators": [
               {
                 "id": "",
@@ -383,7 +404,8 @@
                 "parent_indicator_id": ""
               }
             ],
-            "mitre_techniques": [],
+            "mitre_techniques": [
+            ],
             "story_group_name": [
               "Host Scan (1 alert)"
             ],
@@ -394,8 +416,10 @@
                 "asset": {
                   "id": "",
                   "os": "",
-                  "mac": [],
-                  "ipv4": [],
+                  "mac": [
+                  ],
+                  "ipv4": [
+                  ],
                   "name": "",
                   "vendor": "",
                   "site_id": "",
@@ -411,8 +435,10 @@
                 "actionable_id": ""
               }
             ],
-            "actionable_policies": [],
-            "actionable_information": [],
+            "actionable_policies": [
+            ],
+            "actionable_information": [
+            ],
             "significant_indicators": [
               {
                 "id": "",
@@ -433,7 +459,8 @@
                 "parent_indicator_id": ""
               }
             ],
-            "actionable_suspicious_files": [],
+            "actionable_suspicious_files": [
+            ],
             "actionable_virtual_zones_names": [
               "Endpoint: Other - External"
             ]
@@ -559,7 +586,8 @@
             "actionable_id": ""
           }
         ],
-        "actionable_diffs": [],
+        "actionable_diffs": [
+        ],
         "alert_indicators": [
           {
             "id": "",
@@ -579,7 +607,8 @@
             "parent_indicator_id": ""
           }
         ],
-        "mitre_techniques": [],
+        "mitre_techniques": [
+        ],
         "actionable_assets": [
           {
             "id": "",
@@ -587,8 +616,10 @@
             "asset": {
               "id": "",
               "os": "",
-              "mac": [],
-              "ipv4": [],
+              "mac": [
+              ],
+              "ipv4": [
+              ],
               "name": "",
               "parsed": "",
               "vendor": "",
@@ -619,8 +650,10 @@
             "actionable_id": ""
           }
         ],
-        "actionable_policies": [],
-        "actionable_information": [],
+        "actionable_policies": [
+        ],
+        "actionable_information": [
+        ],
         "significant_indicators": [
           {
             "id": "",
@@ -641,7 +674,8 @@
             "parent_indicator_id": ""
           }
         ],
-        "actionable_suspicious_files": [],
+        "actionable_suspicious_files": [
+        ],
         "actionable_virtual_zones_names": [
           "Endpoint: Other - External"
         ]
@@ -666,7 +700,8 @@
       "operation": "get_tasks",
       "category": "investigation",
       "annotation": "get_tasks",
-      "output_schema": {},
+      "output_schema": {
+      },
       "title": "Get Tasks",
       "description": "Get all tasks and their information",
       "enabled": true,
@@ -747,7 +782,8 @@
       "category": "investigation",
       "annotation": "get_queries",
       "output_schema": {
-        "objects": [],
+        "objects": [
+        ],
         "count_total": 0,
         "count_in_page": 0,
         "count_filtered": 0
@@ -847,7 +883,8 @@
           "description": "",
           "default_sort": "",
           "other_side_name": "",
-          "other_side_headers": [],
+          "other_side_headers": [
+          ],
           "aggregated_description": "",
           "other_side_default_sort": ""
         }
