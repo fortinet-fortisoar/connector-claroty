@@ -1,0 +1,1132 @@
+{
+  "name": "claroty",
+  "label": "Claroty",
+  "description": "Claroty CTD is a robust solution that delivers comprehensive cybersecurity controls for industrial environments. This connector provides automated actions like Get Assets, Get Alerts, Resolve Alert and Get Alert Details",
+  "publisher": "Fortinet",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "version": "1.0.0",
+  "category": "Threat Detection",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "ingestion_supported": true,
+  "ingestion_modes": [
+    "scheduled"
+  ],
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Server URL",
+        "description": "Server name or IP address of the claroty server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "server_url"
+      },
+      {
+        "title": "Username",
+        "description": "Username used to access the claroty server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "text",
+        "name": "username"
+      },
+      {
+        "title": "Password",
+        "description": "Password used to access the claroty server to which you will connect and perform the automated operations.",
+        "required": true,
+        "editable": true,
+        "visible": true,
+        "type": "password",
+        "name": "password"
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True.",
+        "required": false,
+        "editable": true,
+        "visible": true,
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "operation": "get_assets",
+      "category": "investigation",
+      "annotation": "get_assets",
+      "conditional_output_schema": [
+        {
+          "condition": "{{format === asset_list}}",
+          "output_schema": {
+            "objects": [
+              {
+                "id": "",
+                "os": "",
+                "mac": [],
+                "ipv4": [],
+                "name": "",
+                "vlan": [],
+                "ghost": "",
+                "state": "",
+                "valid": "",
+                "parsed": "",
+                "subnet": {
+                  "name": ""
+                },
+                "vendor": "",
+                "edge_id": "",
+                "network": {
+                  "id": "",
+                  "name": "",
+                  "site_id": "",
+                  "resource_id": ""
+                },
+                "site_id": "",
+                "approved": "",
+                "hostname": "",
+                "os_build": "",
+                "protocol": [],
+                "last_seen": "",
+                "site_name": "",
+                "subnet_id": "",
+                "timestamp": "",
+                "asset_type": "",
+                "class_type": "",
+                "first_seen": "",
+                "network_id": "",
+                "risk_level": "",
+                "criticality": "",
+                "resource_id": "",
+                "subnet_type": "",
+                "asset_type__": "",
+                "display_name": "",
+                "purdue_level": "",
+                "special_hint": "",
+                "criticality__": "",
+                "edge_last_run": "",
+                "project_parsed": "",
+                "special_hint__": "",
+                "default_gateway": "",
+                "os_architecture": "",
+                "os_service_pack": "",
+                "virtual_zone_id": "",
+                "domain_workgroup": "",
+                "custom_attributes": [],
+                "virtual_zone_name": "",
+                "active_tasks_names": [],
+                "custom_informations": [],
+                "installed_antivirus": "",
+                "active_queries_names": []
+              }
+            ],
+            "count_total": "",
+            "count_in_page": "",
+            "count_filtered": ""
+          }
+        },
+        {
+          "condition": "{{format === insight_assets}}",
+          "output_schema": {
+            "objects": [
+              {
+                "id": "",
+                "os": "",
+                "mac": [],
+                "ipv4": [],
+                "name": "",
+                "ghost": "",
+                "vendor": "",
+                "site_id": "",
+                "site_name": "",
+                "asset_type": "",
+                "network_id": "",
+                "risk_level": "",
+                "criticality": "",
+                "resource_id": "",
+                "asset_type__": "",
+                "criticality__": ""
+              }
+            ],
+            "count_total": "",
+            "count_in_page": "",
+            "count_filtered": ""
+          }
+        },
+        {
+          "condition": "{{format === rids}}",
+          "output_schema": {
+            "objects": [
+              {
+                "resource_id": ""
+              }
+            ],
+            "count_total": "",
+            "count_in_page": "",
+            "count_filtered": ""
+          }
+        }
+      ],
+      "title": "Get Assets",
+      "description": "Get assets from claroty server based on input parameters you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Filters",
+          "name": "filters",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Enter json key value pairs to filter the response based on it. e.g {\"ipv4__exact\": \"1.1.1.1\", \"insight_status__exact\": 1}",
+          "description": "Enter json key values to filter the assets response based on parameters provided.  e.g {\"ipv4__exact\": \"1.1.1.1\", \"insight_status__exact\": 1}. list of fields that can be used as fields- ipv4__exact, ipv6__exact, mac__icontains, vlan__exact, address__exact, gateway__exact, asset_type__exact, host_name__exact, os__exact, model__icontains, vendor__icontains, state__exact, domain_names__exact, firmware__exact, serial__exact, generic__icontains, display_name__icontains, criticality__exact, old_ip__exact, protocol__exact, last_seen__exact, q__icontains, alert_id__exact, baseline__exact, arp_baselines__exact, insight_status__exact, insights_insight_name__exact, insight_timestamp__gte, insight_timestamp__lte, baseline_category__exact, baseline_access_type__exact, insight_name__exact, insight_row_key__exact, ghost__exact, tasks__exact, active_queries__exact, subnet_tag__exact, custom_attributes__exact, class_type__exact, domain_name__exact, involved_in_tags__exact, hosted_tags__icontains, id__exact, site_id__exact, timestamp__exact, approved__exact, valid__exact, parsed__exact, special_hint__exact, risk_level__exact, network_id__exact, virtual_zone_id__exact, subnet_id__exact, purdue_level__exact"
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of assets to return in response",
+          "description": "Maximum number of assets to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        },
+        {
+          "title": "Format",
+          "name": "format",
+          "type": "select",
+          "options": [
+            "asset_list",
+            "insight_assets",
+            "rids"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "description": "Specifies the type of response (list of fields) returned by the query. If not provided, all asset's properties will return and could affect performance."
+        }
+      ]
+    },
+    {
+      "operation": "get_asset_details",
+      "category": "investigation",
+      "annotation": "get_asset_details",
+      "output_schema": {
+        "id": "",
+        "os": "",
+        "mac": [],
+        "ipv4": [],
+        "name": "",
+        "vlan": [],
+        "ghost": "",
+        "state": "",
+        "valid": "",
+        "parsed": "",
+        "subnet": {
+          "name": ""
+        },
+        "vendor": "",
+        "edge_id": "",
+        "network": {
+          "id": "",
+          "name": "",
+          "site_id": "",
+          "resource_id": ""
+        },
+        "site_id": "",
+        "approved": "",
+        "children": [],
+        "hostname": "",
+        "os_build": "",
+        "protocol": [],
+        "last_seen": "",
+        "site_name": "",
+        "subnet_id": "",
+        "timestamp": "",
+        "asset_type": "",
+        "class_type": "",
+        "first_seen": "",
+        "network_id": "",
+        "num_alerts": "",
+        "risk_level": "",
+        "risk_score": "",
+        "criticality": "",
+        "patch_count": "",
+        "resource_id": "",
+        "subnet_type": "",
+        "asset_type__": "",
+        "display_name": "",
+        "purdue_level": "",
+        "special_hint": "",
+        "code_sections": [],
+        "criticality__": "",
+        "edge_last_run": "",
+        "insight_names": [
+        ],
+        "has_interfaces": "",
+        "project_parsed": "",
+        "special_hint__": "",
+        "default_gateway": "",
+        "os_architecture": "",
+        "os_service_pack": "",
+        "virtual_zone_id": "",
+        "domain_workgroup": "",
+        "custom_attributes": [],
+        "usb_devices_count": "",
+        "virtual_zone_name": "",
+        "active_tasks_names": [],
+        "custom_informations": [],
+        "installed_antivirus": "",
+        "active_queries_names": [],
+        "installed_programs_count": ""
+      },
+      "title": "Get Asset Details",
+      "description": "Get Details of an asset based on resource ID of an asset you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "tooltip": "Enter resource id of an asset which you wants to retrieve (in the format of <asset-id>-<site-id>)",
+          "name": "resource_id",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "description": "Enter resource id of an asset which you wants to retrieve (in the format of <asset-id>-<site-id>)"
+        }
+      ]
+    },
+    {
+      "operation": "get_alerts",
+      "category": "investigation",
+      "annotation": "get_alerts",
+      "output_schema": {
+        "objects": [
+          {
+            "id": "",
+            "type": "",
+            "score": "",
+            "story": "",
+            "type__": "",
+            "network": {
+              "id": "",
+              "name": "",
+              "site_id": "",
+              "resource_id": ""
+            },
+            "site_id": "",
+            "category": "",
+            "protocol": "",
+            "relevant": "",
+            "resolved": "",
+            "severity": "",
+            "story_id": "",
+            "timestamp": "",
+            "category__": "",
+            "network_id": "",
+            "resolution": "",
+            "severity__": "",
+            "description": "",
+            "resource_id": "",
+            "threat_type": "",
+            "is_qualified": "",
+            "resolution__": "",
+            "actionable_caps": [
+              {
+                "id": "",
+                "cap": {
+                  "id": "",
+                  "deleted": "",
+                  "site_id": "",
+                  "file_name": "",
+                  "resource_id": ""
+                },
+                "role": "",
+                "role__": "",
+                "site_id": "",
+                "resource_id": "",
+                "actionable_id": ""
+              }
+            ],
+            "actionable_diffs": [],
+            "alert_indicators": [
+              {
+                "id": "",
+                "site_id": "",
+                "alert_id": "",
+                "resource_id": "",
+                "indicator_id": "",
+                "indicator_info": {
+                  "id": "",
+                  "type": "",
+                  "points": "",
+                  "site_id": "",
+                  "description": "",
+                  "resource_id": ""
+                },
+                "indicator_result": "",
+                "parent_indicator_id": ""
+              }
+            ],
+            "mitre_techniques": [],
+            "story_group_name": [
+              "Host Scan (1 alert)"
+            ],
+            "actionable_assets": [
+              {
+                "id": "",
+                "role": "",
+                "asset": {
+                  "id": "",
+                  "os": "",
+                  "mac": [],
+                  "ipv4": [],
+                  "name": "",
+                  "vendor": "",
+                  "site_id": "",
+                  "hostname": "",
+                  "asset_type": "",
+                  "network_id": "",
+                  "resource_id": "",
+                  "asset_type__": ""
+                },
+                "role__": "",
+                "site_id": "",
+                "resource_id": "",
+                "actionable_id": ""
+              }
+            ],
+            "actionable_policies": [],
+            "actionable_information": [],
+            "significant_indicators": [
+              {
+                "id": "",
+                "icon": "",
+                "site_id": "",
+                "alert_id": "",
+                "resource_id": "",
+                "indicator_id": "",
+                "indicator_info": {
+                  "id": "",
+                  "type": "",
+                  "points": "",
+                  "site_id": "",
+                  "description": "",
+                  "resource_id": ""
+                },
+                "indicator_result": "",
+                "parent_indicator_id": ""
+              }
+            ],
+            "actionable_suspicious_files": [],
+            "actionable_virtual_zones_names": [
+              "Endpoint: Other - External"
+            ]
+          }
+        ],
+        "count_total": "",
+        "count_in_page": "",
+        "count_filtered": ""
+      },
+      "title": "Get Alerts",
+      "description": "Get Alerts from claroty server based on input parameters you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Filters",
+          "name": "filters",
+          "type": "json",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Enter json key values to filter the alerts response based on parameters provided. e.g{\"asset_id__exact\": \"122\", \"severity__exact\": 4}",
+          "description": "Enter json key values to filter the alerts response based on parameters provided. e.g{\"asset_id__exact\": \"122\", \"severity__exact\": 4}. list of fields that can be used as key in filters paramaters page, per_page, asset_id__exact, asset__exact, for_asset__exact, q__exact, primary_asset__exact, non_primary_assets__exact, virtual_zone__exact, alert_id__exact, ot_alerts__exact, family__exact, story_severity__exact, id__exact, site_id__exact, data__exact, description__exact, type__exact, category__exact, severity__exact, timestamp__exact, relevant__exact, resolved__exact, resolution__exact, protocol__exact, score__exact, is_qualified__exact, network_id__exact, resolved_id__exact, assigned_id__exact, story_id__exact, sort"
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of alerts to return in response",
+          "description": "Maximum number of alerts to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        }
+      ]
+    },
+    {
+      "operation": "get_alert_details",
+      "category": "investigation",
+      "annotation": "get_alert_details",
+      "output_schema": {
+        "id": "",
+        "type": "",
+        "score": "",
+        "story": {
+          "id": "",
+          "score": "",
+          "alerts": [
+            {
+              "id": "",
+              "type": "",
+              "type__": "",
+              "resolved": "",
+              "severity": "",
+              "timestamp": "",
+              "severity__": "",
+              "description": ""
+            }
+          ],
+          "site_id": "",
+          "timestamp": "",
+          "description": "",
+          "total_alert_count": "",
+          "baseline_activities": [
+            {
+              "id": "",
+              "site_id": "",
+              "story_id": "",
+              "timestamp": "",
+              "baseline_id": "",
+              "resource_id": "",
+              "baseline_description": ""
+            }
+          ]
+        },
+        "type__": "",
+        "network": {
+          "id": "",
+          "name": "",
+          "site_id": "",
+          "resource_id": ""
+        },
+        "site_id": "",
+        "category": "",
+        "protocol": "",
+        "relevant": "",
+        "resolved": "",
+        "severity": "",
+        "story_id": "",
+        "timestamp": "",
+        "category__": "",
+        "network_id": "",
+        "resolution": "",
+        "severity__": "",
+        "description": "",
+        "resource_id": "",
+        "threat_type": "",
+        "is_qualified": "",
+        "resolution__": "",
+        "actionable_caps": [
+          {
+            "id": "",
+            "cap": {
+              "id": "",
+              "deleted": "",
+              "site_id": "",
+              "file_name": "",
+              "resource_id": ""
+            },
+            "role": "",
+            "role__": "",
+            "site_id": "",
+            "resource_id": "",
+            "actionable_id": ""
+          }
+        ],
+        "actionable_diffs": [],
+        "alert_indicators": [
+          {
+            "id": "",
+            "site_id": "",
+            "alert_id": "",
+            "resource_id": "",
+            "indicator_id": "",
+            "indicator_info": {
+              "id": "",
+              "type": "",
+              "points": "",
+              "site_id": "",
+              "description": "",
+              "resource_id": ""
+            },
+            "indicator_result": "",
+            "parent_indicator_id": ""
+          }
+        ],
+        "mitre_techniques": [],
+        "actionable_assets": [
+          {
+            "id": "",
+            "role": "",
+            "asset": {
+              "id": "",
+              "os": "",
+              "mac": [],
+              "ipv4": [],
+              "name": "",
+              "parsed": "",
+              "vendor": "",
+              "network": {
+                "id": "",
+                "name": "",
+                "site_id": "",
+                "resource_id": ""
+              },
+              "site_id": "",
+              "hostname": "",
+              "site_name": "",
+              "asset_type": "",
+              "class_type": "",
+              "network_id": "",
+              "risk_level": "",
+              "criticality": "",
+              "resource_id": "",
+              "asset_type__": "",
+              "purdue_level": "",
+              "criticality__": "",
+              "project_parsed": "",
+              "virtual_zone_name": ""
+            },
+            "role__": "",
+            "site_id": "",
+            "resource_id": "",
+            "actionable_id": ""
+          }
+        ],
+        "actionable_policies": [],
+        "actionable_information": [],
+        "significant_indicators": [
+          {
+            "id": "",
+            "icon": "",
+            "site_id": "",
+            "alert_id": "",
+            "resource_id": "",
+            "indicator_id": "",
+            "indicator_info": {
+              "id": "",
+              "type": "",
+              "points": "",
+              "site_id": "",
+              "description": "",
+              "resource_id": ""
+            },
+            "indicator_result": "",
+            "parent_indicator_id": ""
+          }
+        ],
+        "actionable_suspicious_files": [],
+        "actionable_virtual_zones_names": [
+          "Endpoint: Other - External"
+        ]
+      },
+      "title": "Get Alert Details",
+      "description": "Get alert details based on alert resource id you have provided",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Resource ID",
+          "tooltip": "Enter resource id of an alert whose details you wants to retrieve.(in the format of <alert-id>-<site-id>)",
+          "name": "resource_id",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "description": "Enter resource id of an alert whose details you wants to retrieve.(in the format of <alert-id>-<site-id>)"
+        }
+      ]
+    },
+    {
+      "operation": "get_tasks",
+      "category": "investigation",
+      "annotation": "get_tasks",
+      "output_schema": {},
+      "title": "Get Tasks",
+      "description": "Get all tasks and their information",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Name Contains (Case-Sensitive)",
+          "name": "name__icontains",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter tasks whose name contains input string",
+          "description": "Filter tasks whose name contains input string"
+        },
+        {
+          "title": "Site ID",
+          "name": "site_id__exact",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter tasks based on input site ID",
+          "description": "Filter tasks based on input site ID"
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of tasks to return in response",
+          "description": "Maximum number of tasks to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        },
+        {
+          "title": "Sort By",
+          "name": "sort",
+          "type": "select",
+          "options": [
+            "name",
+            "-name",
+            "status",
+            "-status",
+            "enabled",
+            "-enabled",
+            "interval",
+            "-interval",
+            "start_time",
+            "-start_time",
+            "end_time",
+            "-end_time",
+            "allowed_run_time_start",
+            "-allowed_run_time_start",
+            "allowed_run_time_end",
+            "-allowed_run_time_end",
+            "last_run_results",
+            "-last_run_results"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"-name\",\"status\",\"-status\",\"enabled\",\"-enabled\",\"interval\",\"-interval\",\"start_time\",\"-start_time\",\"end_time\",\"-end_time\",\"allowed_run_time_start\",\"-allowed_run_time_start\",\"allowed_run_time_end\",\"-allowed_run_time_end\",\"last_run_results\""
+        }
+      ]
+    },
+    {
+      "operation": "get_queries",
+      "category": "investigation",
+      "annotation": "get_queries",
+      "output_schema": {
+        "objects": [],
+        "count_total": 0,
+        "count_in_page": 0,
+        "count_filtered": 0
+      },
+      "title": "Get Queries",
+      "description": "Get all queries and their information based on input parameters you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Name Contains(case-sensitive)",
+          "name": "name__icontains",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter response data whose name contains input string",
+          "description": "Filter response data whose name contains input string"
+        },
+        {
+          "title": "Site ID",
+          "name": "site_id__exact",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter response data based on input site ID",
+          "description": "Filter response data based on input site ID"
+        },
+        {
+          "title": "Sort By",
+          "name": "sort",
+          "type": "select",
+          "options": [
+            "name",
+            "-name",
+            "status",
+            "-status",
+            "enabled",
+            "-enabled",
+            "interval",
+            "-interval",
+            "start_time",
+            "-start_time",
+            "end_time",
+            "-end_time",
+            "allowed_run_time_start",
+            "-allowed_run_time_start",
+            "allowed_run_time_end",
+            "-allowed_run_time_end",
+            "last_run_results",
+            "-last_run_results"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"-name\",\"status\",\"-status\",\"enabled\",\"-enabled\",\"interval\",\"-interval\",\"start_time\",\"-start_time\",\"end_time\",\"-end_time\",\"allowed_run_time_start\",\"-allowed_run_time_start\",\"allowed_run_time_end\",\"-allowed_run_time_end\",\"last_run_results\""
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of items to return in response",
+          "description": "Maximum number of items to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        }
+      ]
+    },
+    {
+      "operation": "get_insights",
+      "category": "investigation",
+      "annotation": "get_insights",
+      "output_schema": [
+        {
+          "name": "",
+          "headers": [
+            {
+              "name": "",
+              "type": "",
+              "hidden": "",
+              "sortable": "",
+              "header_num": ""
+            }
+          ],
+          "severity": "",
+          "description": "",
+          "default_sort": "",
+          "other_side_name": "",
+          "other_side_headers": [],
+          "aggregated_description": "",
+          "other_side_default_sort": ""
+        }
+      ],
+      "title": "Get Insights",
+      "description": "Get summary of an insights based on input parameters you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Format",
+          "name": "format",
+          "placeholder": "e.g insight_page",
+          "type": "text",
+          "value": "insight_page",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "tooltip": "Enter format of an insight to fetch its summary",
+          "description": "Enter format of an insight to fetch its summary"
+        },
+        {
+          "title": "Sort By",
+          "name": "sort",
+          "placeholder": "e.g. -risk_level",
+          "value": "-risk_level",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": true,
+          "description": "Sort the response based on selected input parameter."
+        },
+        {
+          "title": "Host Exact",
+          "name": "ghost__exact",
+          "type": "checkbox",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter response data whose host exact matches input string",
+          "description": "Filter response data whose host exact matches input string"
+        },
+        {
+          "title": "Special Hint Exact",
+          "name": "special_hint__exact",
+          "type": "select",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4",
+          "description": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4"
+        },
+        {
+          "title": "Insight Status Exact",
+          "name": "insight_status__exact",
+          "type": "select",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select the insight status to filter the response based on it. Available values are 0,1,2",
+          "description": "Select the insight status to filter the response based on it. Available values are 0,1,2"
+        },
+        {
+          "title": "Site ID",
+          "name": "site_id__exact",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter response data based on input site ID",
+          "description": "Filter response data based on input site ID"
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of items to return in response",
+          "description": "Maximum number of items to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        }
+      ]
+    },
+    {
+      "operation": "get_events",
+      "category": "investigation",
+      "annotation": "get_events",
+      "output_schema": {
+        "objects": [
+          {
+            "id": "",
+            "type": "",
+            "status": "",
+            "type__": "",
+            "site_id": "",
+            "alert_id": "",
+            "timestamp": "",
+            "description": "",
+            "resource_id": ""
+          }
+        ],
+        "count_total": "",
+        "count_in_page": "",
+        "count_filtered": ""
+      },
+      "title": "Get Events",
+      "description": "Get events from claroty server based on input parameters you have provided.",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Site ID",
+          "name": "site_id",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input site ID",
+          "description": "Filter alerts based on input site ID"
+        },
+        {
+          "title": "ID",
+          "name": "id__exact",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter events based on input ID",
+          "description": "Filter events based on input ID"
+        },
+        {
+          "title": "Alert ID",
+          "name": "alert_id__exact",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input alert ID",
+          "description": "Filter alerts based on input alert ID"
+        },
+        {
+          "title": "Timestamp",
+          "name": "timestamp__exact",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input datetime matches exactly",
+          "description": "Filter alerts based on input datetime matches exactly"
+        },
+        {
+          "title": "Description",
+          "name": "description__contains",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter events data based on input description given",
+          "description": "Filter events data based on input description given"
+        },
+        {
+          "title": "Description (case-sensitive)",
+          "name": "description__contains",
+          "type": "text",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter events data based on input description given",
+          "description": "Filter events data based on input description given"
+        },
+        {
+          "title": "Type",
+          "name": "type__exact",
+          "type": "select",
+          "options": [
+            "0 - eNewAsset",
+            "1 - eAssetConflict",
+            "2 - eBaselineDeviation",
+            "3 - eThreat",
+            "4 - eAssetInformationChange",
+            "5 - eProtocolSpecific",
+            "6 - eBaselineDown",
+            "8 - eBaselineVolumeDeviationHigh",
+            "9 - eBaselineVolumeDeviationLow",
+            "10 - eFTPData",
+            "11 - eBaselineRule",
+            "12 - eHighArpActivity",
+            "13 - eKnownThreatEvent",
+            "14 - eFalseMac",
+            "15 - eSuspiciousFileTransfer",
+            "16 - ePolicyViolation",
+            "17 - ePolicyRuleMatch",
+            "18 - eHostScan",
+            "19 - ePortScan",
+            "20 - eDenialOfService"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input type selected. Available values are",
+          "description": "Filter alerts based on input type selected. Available values are"
+        },
+        {
+          "title": "Status",
+          "name": "status__exact",
+          "type": "select",
+          "options": [
+            "OT Alert",
+            "OT Operation",
+            "Alert",
+            "Not Risky Change"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input status selected. Available values are OT Alert, OT Operation, Alert and Not Risky Change",
+          "description": "Filter alerts based on input status selected. Available values are OT Alert, OT Operation, Alert and Not Risky Change"
+        },
+        {
+          "title": "Sort By",
+          "name": "sort",
+          "type": "select",
+          "options": [
+            "id",
+            "-id",
+            "-site_id",
+            "site_id",
+            "type",
+            "-type",
+            "timestamp",
+            "-timestamp"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "description": "Sort the response based on selected input parameter."
+        },
+        {
+          "title": "Limit",
+          "name": "per_page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of items to return in response",
+          "description": "Maximum number of items to return in response"
+        },
+        {
+          "title": "Page",
+          "name": "page",
+          "type": "integer",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
+        }
+      ]
+    }
+  ]
+}
