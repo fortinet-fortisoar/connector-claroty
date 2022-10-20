@@ -4,11 +4,38 @@
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
 
+ASSET_TYPE = {
+    "Endpoint": "eEndpoint",
+    "Engineering Station": "eEngineeringStation",
+    "Networking": "eNetworking",
+    "OT": "eOT",
+    "PLC": "ePLC"
+}
+
+CRITICALITY_EXACT = {"High": "eHigh", "Medium": "eMedium", "Low": "eLow"}
+
+STATUS_CATEGORY = {
+    "Resolved": "1",
+    "Unresolved": "0",
+    "Security": "1",
+    "Integrity": "0"
+}
+FORMAT = {
+    "Asset List": "asset_list",
+    "Insight Assets": "insight_assets",
+    "Resource IDs": "rids"
+}
 SEVERITY = {
     "Low": 1,
     "Medium": 2,
     "High": 3,
     "Critical": 4
+}
+ALERT_SEVERITY = {
+    "Low": 0,
+    "Medium": 1,
+    "High": 2,
+    "Critical": 3
 }
 
 EVENT_STATUS = {
