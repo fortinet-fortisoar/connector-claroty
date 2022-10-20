@@ -187,7 +187,96 @@
       "enabled": true,
       "parameters": [
         {
-          "title": "Filters",
+          "title": "Asset Type",
+          "name": "asset_type__in",
+          "type": "multiselect",
+          "options": [
+            "Endpoint",
+            "Engineering Station",
+            "Networking",
+            "OT",
+            "PLC"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select asset type to filter assets based on it.",
+          "description": "Select asset type to filter assets based on it."
+        },
+        {
+          "title": "Protocol",
+          "name": "protocol__exact",
+          "type": "multiselect",
+          "options": [
+            "ARP",
+            "CIP",
+            "DCE-RPC",
+            "DNS",
+            "ENIP",
+            "EPM",
+            "FTP",
+            "HTTP",
+            "ICMP",
+            "ICMPv6",
+            "NETBIOS-NAME",
+            "NTP",
+            "RDP",
+            "S7COMM",
+            "S7COMM-PLUS",
+            "SCHNEIDER-NETMANAGE",
+            "SMB",
+            "SMTP",
+            "SNMP",
+            "SSL",
+            "SYSLOG",
+            "TCP",
+            "WINDOWS-WUDO",
+            "WSD"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select asset Protocol to filter assets based on it.",
+          "description": "Select asset Protocol to filter assets based on it."
+        },
+        {
+          "title": "Asset Criticality",
+          "name": "criticality__exact",
+          "type": "multiselect",
+          "options": [
+            "High",
+            "Medium",
+            "Low"
+          ],
+          "value": "High",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select asset Criticality to filter assets based on it.",
+          "description": "Select asset Criticality to filter assets based on it."
+        },
+        {
+          "title": "Start Time",
+          "name": "timestamp__gte",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Start time from which you wants to fetch assets",
+          "description": "Start time from which you wants to fetch assets"
+        },
+        {
+          "title": "End Time",
+          "name": "timestamp__lte",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "End time till which you wants to fetch assets",
+          "description": "End time till which you wants to fetch assets"
+        },
+        {
+          "title": "Other Filters",
           "name": "filters",
           "type": "json",
           "visible": true,
@@ -204,7 +293,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Maximum number of assets to return in response",
-          "description": "Maximum number of assets to return in response"
+          "description": "Maximum number of assets to return in response. Default is 10"
         },
         {
           "title": "Page",
@@ -221,12 +310,13 @@
           "name": "format",
           "type": "select",
           "options": [
-            "asset_list",
-            "insight_assets",
-            "rids"
+            "Asset List",
+            "Insight Assets",
+            "Resource IDs"
           ],
           "visible": true,
           "editable": true,
+          "value": "Asset List",
           "required": false,
           "description": "Specifies the type of response (list of fields) returned by the query. If not provided, all asset's properties will return and could affect performance."
         }
@@ -475,7 +565,72 @@
       "enabled": true,
       "parameters": [
         {
-          "title": "Filters",
+          "title": "Status",
+          "name": "resolution__exact",
+          "type": "multiselect",
+          "options": [
+            "Resolved",
+            "Unresolved"
+          ],
+          "value": "Resolved",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of alerts to return in response",
+          "description": "Maximum number of alerts to return in response"
+        },
+        {
+          "title": "Category",
+          "name": "category__exact",
+          "type": "multiselect",
+          "options": [
+            "Security",
+            "Integrity"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Maximum number of alerts to return in response",
+          "description": "Maximum number of alerts to return in response"
+        },
+        {
+          "title": "Alert Severity",
+          "name": "severity__exact",
+          "type": "multiselect",
+          "options": [
+            "Critical",
+            "High",
+            "Medium",
+            "Low"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Select asset Criticality to filter assets based on it.",
+          "description": "Select asset Criticality to filter assets based on it."
+        },
+        {
+          "title": "Start Time",
+          "name": "timestamp__gte",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Start time from which you wants to fetch alerts",
+          "description": "Start time from which you wants to fetch alerts"
+        },
+        {
+          "title": "End Time",
+          "name": "timestamp__lte",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "End time till which you wants to fetch alerts",
+          "description": "End time till which you wants to fetch alerts"
+        },
+        {
+          "title": "Other Filters",
           "name": "filters",
           "type": "json",
           "visible": true,
@@ -1047,14 +1202,24 @@
           "description": "Filter alerts based on input alert ID"
         },
         {
-          "title": "Timestamp",
-          "name": "timestamp__exact",
+          "title": "Start Time",
+          "name": "timestamp__gte",
           "type": "datetime",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter alerts based on input datetime matches exactly",
-          "description": "Filter alerts based on input datetime matches exactly"
+          "tooltip": "Filter alerts based on input start datetime",
+          "description": "Filter alerts based on input start datetime"
+        },
+        {
+          "title": "End Time",
+          "name": "timestamp__lte",
+          "type": "datetime",
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "tooltip": "Filter alerts based on input end datetime",
+          "description": "Filter alerts based on input end datetime"
         },
         {
           "title": "Description",
@@ -1139,6 +1304,7 @@
             "-timestamp"
           ],
           "visible": true,
+          "value": "id",
           "editable": true,
           "required": false,
           "description": "Sort the response based on selected input parameter."
