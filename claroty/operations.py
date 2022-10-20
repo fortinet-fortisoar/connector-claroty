@@ -80,7 +80,28 @@ class Claroty:
                 raise ConnectorError(str(err))
 
 
+def get_params_dict(input_param, const_dict=None):
+    result_str = ''
+    if len(input_param) > 0 and isinstance(input_param, list):
+        for item in input_param:
+            if const_dict:
+                result_str = '{0}{1},;$'.format(result_str, const_dict.get(item))
+            else:
+                result_str = '{0}{1},;$'.format(result_str, item)
+    return result_str[:-3]
+
+
 def get_assets(config, params):
+    asset_type__in = get_params_dict(params.get('asset_type__in'), ASSET_TYPE)
+    protocol__exact = get_params_dict(params.get('protocol__exact'))
+    criticality__exact = get_params_dict(params.get('criticality__exact'), CRITICALITY_EXACT)
+    if not isinstance(params.get('filters'), dict):
+        params['filters'] = {}
+    params.get('filters').update({'asset_type__in': asset_type__in, 'protocol__exact': protocol__exact,
+                                  'criticality__exact': criticality__exact,
+                                  'timestamp__gte': params.get('timestamp__gte'),
+                                  'timestamp__lte': params.get('timestamp__lte'),
+                                  })
     return fetch_data_from_server(config, params, endpoint='/ranger/assets')
 
 
@@ -91,13 +112,14 @@ def fetch_data_from_server(config, params, endpoint):
         header = {'Authorization': str(claroty_obj.token)}
         data = {}
         if params.get('filters'):
-            data = params.get('filters')
+            filters_dict = {k: v for k, v in params.get('filters').items() if v is not None and v != '' and v != {} and v != []}
+            data = filters_dict
         if params.get('per_page'):
             data['per_page'] = params.get('per_page')
         if params.get('page'):
             data['page'] = params.get('page')
         if params.get('format'):
-            data['format'] = params.get('format')
+            data['format'] = FORMAT.get(params.get('format'), 'asset_list')
         res = claroty_obj.make_rest_call(endpoint=endpoint, method='GET', params=data, header=header)
         return res
     except Exception as err:
@@ -111,6 +133,14 @@ def get_asset_details(config, params):
 
 
 def get_alerts(config, params):
+    resolution__exact = get_params_dict(params.get('resolution__exact'), STATUS_CATEGORY)
+    category__exact = get_params_dict(params.get('category__exact'), STATUS_CATEGORY)
+    severity__exact = get_params_dict(params.get('severity__exact'), ALERT_SEVERITY)
+    if not isinstance(params.get('filters'), dict):
+        params['filters'] = {}
+    params.get('filters').update({'resolution__exact': resolution__exact, 'category__exact': category__exact,
+                                  'severity__exact': severity__exact, 'timestamp__gte': params.get('timestamp__gte'),
+                                  'timestamp__lte': params.get('timestamp__lte')})
     return fetch_data_from_server(config, params, endpoint='/ranger/alerts')
 
 
@@ -126,7 +156,6 @@ def get_tasks(config, params):
         'site_id__exact': params.get('site_id__exact'),
         'sort': params.get('sort')
     }
-    filters_dict = {k: v for k, v in filters_dict.items() if v is not None and v != '' and v != {} and v != []}
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -138,7 +167,6 @@ def get_queries(config, params):
         'site_id__exact': params.get('site_id__exact'),
         'sort': params.get('sort')
     }
-    filters_dict = {k: v for k, v in filters_dict.items() if v is not None and v != '' and v != {} and v != []}
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -152,7 +180,6 @@ def get_insights(config, params):
         'insight_status__exact': params.get('insight_status__exact'),
         'sort': params.get('sort')
     }
-    filters_dict = {k: v for k, v in filters_dict.items() if v is not None and v != '' and v != {} and v != []}
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -163,14 +190,14 @@ def get_events(config, params):
         'site_id': params.get('site_id'),
         'id__exact': params.get('id__exact'),
         'alert_id__exact': params.get('alert_id__exact'),
-        'timestamp__exact': params.get('timestamp__exact'),
+        'timestamp__gte': params.get('timestamp__gte'),
+        'timestamp__lte': params.get('timestamp__lte'),
         'description__contains': params.get('description__contains'),
         'description__icontains': params.get('description__icontains'),
         'type__exact': TYPE_DICT.get(params.get('type__exact')),
         'status__exact': EVENT_STATUS.get(params.get('status__exact')),
         'sort': params.get('sort')
     }
-    filters_dict = {k: v for k, v in filters_dict.items() if v is not None and v != '' and v != {} and v != []}
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -191,7 +218,7 @@ operations = {
     'get_asset_details': get_asset_details,
     'get_alerts': get_alerts,
     'get_alert_details': get_alert_details,
-    'get_tasks': get_tasks,   #no data available and not found in UI
+    'get_tasks': get_tasks,   # no data available
     'get_queries': get_queries,  # no data available
     'get_insights': get_insights,
     'get_events': get_events
