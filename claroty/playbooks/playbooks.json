@@ -6,13 +6,13 @@
       "name": "Sample - Claroty - 1.0.0",
       "description": "Sample playbooks for \"Claroty\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
-      "image": "/api/3/images/df5bef66-1438-482f-81d0-e9dac39511a4",
+      "image": "/api/3/images/64c908a3-fdb4-44dc-aa3d-7434f85542d4",
       "uuid": "8370a01d-a451-4ef2-bbbe-73f1538795a9",
-      "id": 203,
-      "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-      "createDate": 1666087154,
-      "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-      "modifyDate": 1666087154,
+      "id": 206,
+      "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "createDate": 1666248652,
+      "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+      "modifyDate": 1666248652,
       "recordTags": [],
       "workflows": [
         {
@@ -28,7 +28,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666087154,
+          "lastModifyDate": 1666255562,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/a74acb95-27b7-4814-93d5-5b08bd4149c3",
@@ -43,8 +43,13 @@
                 "params": {
                   "page": "",
                   "format": "rids",
-                  "filters": "{\n  \"timestamp__lte\": \"1665998094\",\n  \"ipv4__exact\": \"192.168.162.53\"\n}",
-                  "per_page": 10
+                  "filters": "{\n  \"description__contains\": \"data\",\n  \"mac__contains\": \"20\"\n}",
+                  "per_page": 10,
+                  "asset_type__in": [],
+                  "timestamp__gte": "2022-10-17T18:30:00.000Z",
+                  "timestamp__lte": "2022-10-20T08:07:50.378Z",
+                  "protocol__exact": [],
+                  "criticality__exact": []
                 },
                 "version": "1.0.0",
                 "connector": "claroty",
@@ -57,7 +62,7 @@
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "24e88a4a-bb2c-4bbe-bff6-3fd4f1801012",
-              "id": 8371
+              "id": 8532
             },
             {
               "@type": "WorkflowStep",
@@ -85,7 +90,7 @@
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "a74acb95-27b7-4814-93d5-5b08bd4149c3",
-              "id": 8372
+              "id": 8533
             }
           ],
           "routes": [
@@ -104,11 +109,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3104,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
+          "id": 3152,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "modifyDate": 1666257324,
           "owners": [],
           "isPrivate": false
         },
@@ -125,11 +130,49 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666087154,
+          "lastModifyDate": 1666256593,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/60c1e601-c373-4d6c-bdac-6d121fefe4ee",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Alerts",
+              "description": null,
+              "arguments": {
+                "name": "Claroty",
+                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
+                "params": {
+                  "page": "",
+                  "format": "",
+                  "filters": "{\n  \"score__exact\": \"100\",\n  \"description__contains\": \"TCP\"\n}",
+                  "per_page": "",
+                  "timestamp__gte": "2022-10-17T18:30:00.000Z",
+                  "timestamp__lte": "2022-10-20T08:12:33.771Z",
+                  "category__exact": "",
+                  "severity__exact": [
+                    "Critical",
+                    "High",
+                    "Medium",
+                    "Low"
+                  ],
+                  "resolution__exact": ""
+                },
+                "version": "1.0.0",
+                "connector": "claroty",
+                "operation": "get_alerts",
+                "operationTitle": "Get Alerts",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "180",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "57dc33d6-1582-40e1-8687-55d48eb40b72",
+              "id": 8535
+            },
             {
               "@type": "WorkflowStep",
               "name": "Alerts",
@@ -156,35 +199,7 @@
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "60c1e601-c373-4d6c-bdac-6d121fefe4ee",
-              "id": 8373
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Alerts",
-              "description": null,
-              "arguments": {
-                "name": "Claroty",
-                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
-                "params": {
-                  "page": "",
-                  "format": "",
-                  "filters": "{\n  \"score__exact\": \"100\",\n  \"timestamp__exact\": \"2022-10-13T11:22:20+00:00\"\n}",
-                  "per_page": ""
-                },
-                "version": "1.0.0",
-                "connector": "claroty",
-                "operation": "get_alerts",
-                "operationTitle": "Get Alerts",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "180",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "57dc33d6-1582-40e1-8687-55d48eb40b72",
-              "id": 8374
+              "id": 8534
             }
           ],
           "routes": [
@@ -203,11 +218,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3105,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
+          "id": 3153,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "modifyDate": 1666257323,
           "owners": [],
           "isPrivate": false
         },
@@ -229,6 +244,31 @@
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/6c327b6a-e1a5-4d67-ac0c-89153130526b",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Alert Details",
+              "description": null,
+              "arguments": {
+                "name": "Claroty",
+                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
+                "params": {
+                  "resource_id": "9-1"
+                },
+                "version": "1.0.0",
+                "connector": "claroty",
+                "operation": "get_alert_details",
+                "operationTitle": "Get Alert Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "uuid": "2574753f-8c89-4a77-90a3-60a0407005f7",
+              "id": 8537
+            },
             {
               "@type": "WorkflowStep",
               "name": "Alerts",
@@ -255,32 +295,7 @@
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "6c327b6a-e1a5-4d67-ac0c-89153130526b",
-              "id": 8375
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Alert Details",
-              "description": null,
-              "arguments": {
-                "name": "Claroty",
-                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
-                "params": {
-                  "resource_id": "9-1"
-                },
-                "version": "1.0.0",
-                "connector": "claroty",
-                "operation": "get_alert_details",
-                "operationTitle": "Get Alert Details",
-                "step_variables": {
-                  "output_data": "{{vars.result}}"
-                }
-              },
-              "status": null,
-              "top": "120",
-              "left": "188",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "uuid": "2574753f-8c89-4a77-90a3-60a0407005f7",
-              "id": 8376
+              "id": 8536
             }
           ],
           "routes": [
@@ -299,11 +314,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3106,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3154,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -325,6 +340,34 @@
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/8a9902b9-86c6-4ee1-8f0d-4bd0291b89a5",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "c5c5e396-1881-45bf-abcf-89df85ffa5a3",
+                "title": "Claroty: Get Events",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "8a9902b9-86c6-4ee1-8f0d-4bd0291b89a5",
+              "id": 8539
+            },
             {
               "@type": "WorkflowStep",
               "name": "Get Events",
@@ -357,35 +400,7 @@
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "dc054830-dc9b-42b4-8747-0d67901dc01b",
-              "id": 8377
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Alerts",
-              "description": null,
-              "arguments": {
-                "route": "c5c5e396-1881-45bf-abcf-89df85ffa5a3",
-                "title": "Claroty: Get Events",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "8a9902b9-86c6-4ee1-8f0d-4bd0291b89a5",
-              "id": 8378
+              "id": 8538
             }
           ],
           "routes": [
@@ -404,11 +419,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3107,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3155,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -460,7 +475,7 @@
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "8cefb0e6-9ccf-44e6-b732-bb7c84c06bd8",
-              "id": 8379
+              "id": 8540
             },
             {
               "@type": "WorkflowStep",
@@ -488,7 +503,7 @@
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "e6b236d7-84ff-4acd-878a-e25ea888b4c7",
-              "id": 8380
+              "id": 8541
             }
           ],
           "routes": [
@@ -507,11 +522,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3108,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3156,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -536,63 +551,6 @@
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/61ff2660-a260-47ee-9202-baa7f99f4eb5",
           "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "step_variables": {
-                  "input": {
-                    "params": []
-                  }
-                }
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
-              "uuid": "61ff2660-a260-47ee-9202-baa7f99f4eb5",
-              "id": 8381
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Update Record",
-              "description": null,
-              "arguments": {
-                "resource": {
-                  "sourcedata": "{{vars.alert_details | toJSON }}"
-                },
-                "_showJson": false,
-                "operation": "Overwrite",
-                "collection": "{{vars.alertdata['@id']}}",
-                "__recommend": [],
-                "collectionType": "/api/3/alerts",
-                "fieldOperation": {
-                  "recordTags": "Overwrite"
-                },
-                "step_variables": []
-              },
-              "status": null,
-              "top": "440",
-              "left": "600",
-              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
-              "uuid": "34bb8f88-b478-4167-862f-de0cac972abd",
-              "id": 8382
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Set Result",
-              "description": null,
-              "arguments": {
-                "alert_details": "{\"alert_data\":  {{vars.input.params.alertdata.sourcedata | toDict}}, \"associated_events\": {{vars.fetch_event.data}} }"
-              },
-              "status": null,
-              "top": "300",
-              "left": "420",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "7c33e60f-38f0-45ae-a794-d3b584249859",
-              "id": 8383
-            },
             {
               "@type": "WorkflowStep",
               "name": "Fetch Related Events",
@@ -626,7 +584,64 @@
               "left": "200",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "346fdc76-9a76-4562-9014-8d7c5a7a3a33",
-              "id": 8384
+              "id": 8545
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Record",
+              "description": null,
+              "arguments": {
+                "resource": {
+                  "sourcedata": "{{vars.alert_details | toJSON }}"
+                },
+                "_showJson": false,
+                "operation": "Overwrite",
+                "collection": "{{vars.alertdata['@id']}}",
+                "__recommend": [],
+                "collectionType": "/api/3/alerts",
+                "fieldOperation": {
+                  "recordTags": "Overwrite"
+                },
+                "step_variables": []
+              },
+              "status": null,
+              "top": "440",
+              "left": "600",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "uuid": "34bb8f88-b478-4167-862f-de0cac972abd",
+              "id": 8543
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "step_variables": {
+                  "input": {
+                    "params": []
+                  }
+                }
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "uuid": "61ff2660-a260-47ee-9202-baa7f99f4eb5",
+              "id": 8542
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Set Result",
+              "description": null,
+              "arguments": {
+                "alert_details": "{\"alert_data\":  {{vars.input.params.alertdata.sourcedata | toDict}}, \"associated_events\": {{vars.fetch_event.data}} }"
+              },
+              "status": null,
+              "top": "300",
+              "left": "420",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "7c33e60f-38f0-45ae-a794-d3b584249859",
+              "id": 8544
             }
           ],
           "routes": [
@@ -664,11 +679,11 @@
             "dataingestion",
             "Claroty"
           ],
-          "id": 3109,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3157,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -690,6 +705,34 @@
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/20973c61-9269-4237-a194-f427cd592bf7",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "43bcb7f2-69bb-4bb0-ad1b-28f5c692cd26",
+                "title": "Claroty: Get Tasks",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "20973c61-9269-4237-a194-f427cd592bf7",
+              "id": 8547
+            },
             {
               "@type": "WorkflowStep",
               "name": "Get Tasks",
@@ -717,35 +760,7 @@
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "4a712993-75d3-44cf-a412-376e7ca67e9f",
-              "id": 8385
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Alerts",
-              "description": null,
-              "arguments": {
-                "route": "43bcb7f2-69bb-4bb0-ad1b-28f5c692cd26",
-                "title": "Claroty: Get Tasks",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "20973c61-9269-4237-a194-f427cd592bf7",
-              "id": 8386
+              "id": 8546
             }
           ],
           "routes": [
@@ -764,11 +779,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3110,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3158,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -816,7 +831,75 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "12f9618c-4617-42d5-be4f-4586a48a1401",
-              "id": 8387
+              "id": 8548
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Update Last Detection Fetch Macro",
+              "description": null,
+              "arguments": {
+                "config": "32a9a084-8135-41bb-8649-569c45d80505",
+                "params": {
+                  "macro": "{{vars.steps.Fetch_Alerts.claroty_macro_name}}",
+                  "value": "{{vars.steps.Fetch_Alerts.curr_timestamp}}"
+                },
+                "version": "3.2.1",
+                "connector": "cyops_utilities",
+                "operation": "updatemacro",
+                "operationTitle": "CyOPs: Update Macro",
+                "step_variables": []
+              },
+              "status": null,
+              "top": "440",
+              "left": "800",
+              "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+              "uuid": "33a84f33-cd3a-4877-a04c-8214e6bfe290",
+              "id": 8551
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Related Events",
+              "description": null,
+              "arguments": {
+                "when": "{{vars.steps.Fetch_Alerts.data|length > 0}}",
+                "for_each": {
+                  "item": "{{vars.steps.Create_Record}}",
+                  "__bulk": false,
+                  "parallel": true,
+                  "condition": ""
+                },
+                "arguments": {
+                  "alertdata": "{{vars.item}}",
+                  "max_events": "{{vars.steps.Fetch_Alerts.max_event_count}}"
+                },
+                "apply_async": true,
+                "step_variables": [],
+                "workflowReference": "/api/3/workflows/8bf6d636-9604-416b-832f-059fa9835520"
+              },
+              "status": null,
+              "top": "560",
+              "left": "960",
+              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "uuid": "444828e0-9c7f-4614-8657-73177291d7ba",
+              "id": 8553
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Fetch Alerts",
+              "description": null,
+              "arguments": {
+                "arguments": [],
+                "apply_async": false,
+                "step_variables": [],
+                "pass_input_record": true,
+                "workflowReference": "/api/3/workflows/c8d134aa-6306-48bb-8dff-d4f650dddee5"
+              },
+              "status": null,
+              "top": "120",
+              "left": "280",
+              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "uuid": "4af6ada1-1998-4a3c-8994-d2f8fdeb733a",
+              "id": 8552
             },
             {
               "@type": "WorkflowStep",
@@ -946,7 +1029,7 @@
               "left": "640",
               "stepType": "/api/3/workflow_step_types/2597053c-e718-44b4-8394-4d40fe26d357",
               "uuid": "4c90ba2e-ee3a-4013-a12b-1eec350afce4",
-              "id": 8388
+              "id": 8549
             },
             {
               "@type": "WorkflowStep",
@@ -967,86 +1050,18 @@
               "left": "480",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "uuid": "a4e8d35a-82cd-4a7f-9b70-f608a9204122",
-              "id": 8389
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Update Last Detection Fetch Macro",
-              "description": null,
-              "arguments": {
-                "config": "32a9a084-8135-41bb-8649-569c45d80505",
-                "params": {
-                  "macro": "{{vars.steps.Fetch_Alerts.claroty_macro_name}}",
-                  "value": "{{vars.steps.Fetch_Alerts.curr_timestamp}}"
-                },
-                "version": "3.2.1",
-                "connector": "cyops_utilities",
-                "operation": "updatemacro",
-                "operationTitle": "CyOPs: Update Macro",
-                "step_variables": []
-              },
-              "status": null,
-              "top": "440",
-              "left": "800",
-              "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
-              "uuid": "33a84f33-cd3a-4877-a04c-8214e6bfe290",
-              "id": 8390
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Fetch Alerts",
-              "description": null,
-              "arguments": {
-                "arguments": [],
-                "apply_async": false,
-                "step_variables": [],
-                "pass_input_record": true,
-                "workflowReference": "/api/3/workflows/c8d134aa-6306-48bb-8dff-d4f650dddee5"
-              },
-              "status": null,
-              "top": "120",
-              "left": "280",
-              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
-              "uuid": "4af6ada1-1998-4a3c-8994-d2f8fdeb733a",
-              "id": 8391
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Related Events",
-              "description": null,
-              "arguments": {
-                "when": "{{vars.steps.Fetch_Alerts.data|length > 0}}",
-                "for_each": {
-                  "item": "{{vars.steps.Create_Record}}",
-                  "__bulk": false,
-                  "parallel": true,
-                  "condition": ""
-                },
-                "arguments": {
-                  "alertdata": "{{vars.item}}",
-                  "max_events": "{{vars.steps.Fetch_Alerts.max_event_count}}"
-                },
-                "apply_async": true,
-                "step_variables": [],
-                "workflowReference": "/api/3/workflows/8bf6d636-9604-416b-832f-059fa9835520"
-              },
-              "status": null,
-              "top": "560",
-              "left": "960",
-              "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
-              "uuid": "444828e0-9c7f-4614-8657-73177291d7ba",
-              "id": 8392
+              "id": 8550
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Update Last Detection Fetch Macro -> Get Related Events",
-              "targetStep": "/api/3/workflow_steps/444828e0-9c7f-4614-8657-73177291d7ba",
-              "sourceStep": "/api/3/workflow_steps/33a84f33-cd3a-4877-a04c-8214e6bfe290",
+              "name": "Create Record -> Update Last Detection Fetch Macro",
+              "targetStep": "/api/3/workflow_steps/33a84f33-cd3a-4877-a04c-8214e6bfe290",
+              "sourceStep": "/api/3/workflow_steps/4c90ba2e-ee3a-4013-a12b-1eec350afce4",
               "label": null,
               "isExecuted": false,
-              "uuid": "bb52ddf3-ce2a-412e-9e55-e07239e65d40"
+              "uuid": "6d360c04-c79f-485a-af1a-021d176ef84c"
             },
             {
               "@type": "WorkflowRoute",
@@ -1059,21 +1074,21 @@
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Create Record -> Update Last Detection Fetch Macro",
-              "targetStep": "/api/3/workflow_steps/33a84f33-cd3a-4877-a04c-8214e6bfe290",
-              "sourceStep": "/api/3/workflow_steps/4c90ba2e-ee3a-4013-a12b-1eec350afce4",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "6d360c04-c79f-485a-af1a-021d176ef84c"
-            },
-            {
-              "@type": "WorkflowRoute",
               "name": "Start -> Fetch Detections",
               "targetStep": "/api/3/workflow_steps/4af6ada1-1998-4a3c-8994-d2f8fdeb733a",
               "sourceStep": "/api/3/workflow_steps/12f9618c-4617-42d5-be4f-4586a48a1401",
               "label": null,
               "isExecuted": false,
               "uuid": "a465b383-057c-41cc-89e6-e26a0698e9a5"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Update Last Detection Fetch Macro -> Get Related Events",
+              "targetStep": "/api/3/workflow_steps/444828e0-9c7f-4614-8657-73177291d7ba",
+              "sourceStep": "/api/3/workflow_steps/33a84f33-cd3a-4877-a04c-8214e6bfe290",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "bb52ddf3-ce2a-412e-9e55-e07239e65d40"
             },
             {
               "@type": "WorkflowRoute",
@@ -1093,11 +1108,11 @@
             "ingest",
             "Claroty"
           ],
-          "id": 3111,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3159,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -1114,7 +1129,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666087154,
+          "lastModifyDate": 1666257315,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/23d7566f-a791-4ba2-bff2-6badff10278f",
@@ -1130,7 +1145,12 @@
                   "page": "",
                   "format": "asset_list",
                   "filters": "{{vars.filters}}",
-                  "per_page": "{{vars.per_page}}"
+                  "per_page": "{{vars.per_page}}",
+                  "timestamp__gte": "{{vars.last_pull_time}}",
+                  "timestamp__lte": "{{vars.curr_timestamp}}",
+                  "category__exact": "{{vars.category__exact}}",
+                  "severity__exact": "{{vars.severity__exact}}",
+                  "resolution__exact": "{{vars.resolution__exact}}"
                 },
                 "version": "1.0.0",
                 "connector": "claroty",
@@ -1140,11 +1160,11 @@
                 "step_variables": []
               },
               "status": null,
-              "top": "560",
-              "left": "980",
+              "top": "480",
+              "left": "800",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "08626030-9893-42e4-9ff6-29e432586719",
-              "id": 8393
+              "id": 8554
             },
             {
               "@type": "WorkflowStep",
@@ -1155,7 +1175,7 @@
                   "input": {
                     "params": []
                   },
-                  "_configuration_schema": "[\n  {\n    \"title\": \"Pull Alerts From Last X Minutes\",\n    \"required\": true,\n    \"editable\": true,\n    \"visible\": true,\n    \"type\": \"text\",\n    \"name\": \"minutes\",\n    \"tooltip\": \"Fetch alerts from last X minutes. e.g 5\",\n    \"value\": 5\n  },\n  {\n    \"title\": \"Filters\",\n    \"name\": \"filters\",\n    \"type\": \"json\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Enter JSON key values to filter the alerts response based on parameters provided. e.g{\\\"asset_id__exact\\\": \\\"122\\\", \\\"severity__exact\\\": 4}\",\n    \"description\": \"Enter JSON key values to filter the alerts response based on parameters provided. e.g{\\\"asset_id__exact\\\": \\\"122\\\", \\\"severity__exact\\\": 4}. list of fields that can be used as key in filters parameters -  page, per_page, asset_id__exact, asset__exact, for_asset__exact, q__exact, primary_asset__exact, non_primary_assets__exact, virtual_zone__exact, alert_id__exact, ot_alerts__exact, family__exact, story_severity__exact, id__exact, site_id__exact, data__exact, description__exact, type__exact, category__exact, severity__exact, timestamp__exact, relevant__exact, resolved__exact, resolution__exact, protocol__exact, score__exact, is_qualified__exact, network_id__exact, resolved_id__exact, assigned_id__exact, story_id__exact, sort\"\n  },\n  {\n    \"title\": \"Limit\",\n    \"name\": \"per_page\",\n    \"type\": \"integer\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of alerts to return in response\",\n    \"description\": \"Maximum number of alerts to return in response\"\n  },\n  {\n    \"title\": \"Event Count to Pull Per Alert\",\n    \"name\": \"max_event_count\",\n    \"type\": \"integer\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of events to pull per alert\",\n    \"description\": \"Maximum number of events to pull per alert\"\n  }\n]"
+                  "_configuration_schema": "[\n  {\n    \"title\": \"Pull Alerts From Last X Minutes\",\n    \"required\": true,\n    \"editable\": true,\n    \"visible\": true,\n    \"type\": \"text\",\n    \"name\": \"minutes\",\n    \"tooltip\": \"Fetch alerts from last X minutes. e.g 5\",\n    \"value\": 5\n  },\n  {\n    \"title\": \"Status\",\n    \"name\": \"resolution__exact\",\n    \"type\": \"multiselect\",\n    \"options\": [\n      \"Resolved\",\n      \"Unresolved\"\n    ],\n    \"value\": \"Resolved\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of alerts to return in response\",\n    \"description\": \"Maximum number of alerts to return in response\"\n  },\n  {\n    \"title\": \"Category\",\n    \"name\": \"category__exact\",\n    \"type\": \"multiselect\",\n    \"options\": [\n      \"Security\",\n      \"Integrity\"\n    ],\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of alerts to return in response\",\n    \"description\": \"Maximum number of alerts to return in response\"\n  },\n  {\n    \"title\": \"Alert Severity\",\n    \"name\": \"severity__exact\",\n    \"type\": \"multiselect\",\n    \"options\": [\n      \"Critical\",\n      \"High\",\n      \"Medium\",\n      \"Low\"\n    ],\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Select asset Criticality to filter assets based on it.\",\n    \"description\": \"Select asset Criticality to filter assets based on it.\"\n  },\n  {\n    \"title\": \"Other Filters\",\n    \"name\": \"filters\",\n    \"type\": \"json\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Enter JSON key values to filter the alerts response based on parameters provided. e.g{\\\"asset_id__exact\\\": \\\"122\\\", \\\"severity__exact\\\": 4}\",\n    \"description\": \"Enter JSON key values to filter the alerts response based on parameters provided. e.g{\\\"asset_id__exact\\\": \\\"122\\\", \\\"severity__exact\\\": 4}. list of fields that can be used as key in filters parameters -  page, per_page, asset_id__exact, asset__exact, for_asset__exact, q__exact, primary_asset__exact, non_primary_assets__exact, virtual_zone__exact, alert_id__exact, ot_alerts__exact, family__exact, story_severity__exact, id__exact, site_id__exact, data__exact, description__exact, type__exact, category__exact, severity__exact, timestamp__exact, relevant__exact, resolved__exact, resolution__exact, protocol__exact, score__exact, is_qualified__exact, network_id__exact, resolved_id__exact, assigned_id__exact, story_id__exact, sort\"\n  },\n  {\n    \"title\": \"Limit\",\n    \"name\": \"per_page\",\n    \"type\": \"integer\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of alerts to return in response\",\n    \"description\": \"Maximum number of alerts to return in response\"\n  },\n  {\n    \"title\": \"Event Count to Pull Per Alert\",\n    \"name\": \"max_event_count\",\n    \"type\": \"integer\",\n    \"visible\": true,\n    \"editable\": true,\n    \"required\": false,\n    \"tooltip\": \"Maximum number of events to pull per alert\",\n    \"description\": \"Maximum number of events to pull per alert\"\n  }\n]"
                 }
               },
               "status": null,
@@ -1163,7 +1183,25 @@
               "left": "80",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
               "uuid": "23d7566f-a791-4ba2-bff2-6badff10278f",
-              "id": 8394
+              "id": 8555
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Configuration",
+              "description": null,
+              "arguments": {
+                "filters": "{}",
+                "minutes": "5",
+                "per_page": "1000",
+                "pullTimeMacro": "ClarotyLastEventPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}",
+                "max_event_count": "10"
+              },
+              "status": null,
+              "top": "140",
+              "left": "240",
+              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "uuid": "28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
+              "id": 8557
             },
             {
               "@type": "WorkflowStep",
@@ -1186,25 +1224,7 @@
               "left": "420",
               "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
               "uuid": "88867266-b23c-42b0-9a24-75bb67be1438",
-              "id": 8395
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Configuration",
-              "description": null,
-              "arguments": {
-                "filters": "{}",
-                "minutes": "5",
-                "per_page": "1000",
-                "pullTimeMacro": "ClarotyLastEventPullTime_{{vars['audit_info']['cyops_playbook_iri'].split('/')[-1].replace('-','_')}}",
-                "max_event_count": "10"
-              },
-              "status": null,
-              "top": "140",
-              "left": "240",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
-              "id": 8396
+              "id": 8556
             },
             {
               "@type": "WorkflowStep",
@@ -1220,7 +1240,7 @@
               "left": "600",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "uuid": "d0ad8b66-2326-44a0-af39-a7119d579a7f",
-              "id": 8397
+              "id": 8558
             },
             {
               "@type": "WorkflowStep",
@@ -1233,25 +1253,11 @@
                 "claroty_macro_name": "{{vars.pullTimeMacro}}"
               },
               "status": null,
-              "top": "660",
-              "left": "1140",
+              "top": "620",
+              "left": "1000",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
               "uuid": "ed1ee218-fe9c-4918-bd56-e11e54e3d6ac",
-              "id": 8398
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Generate Filter Dict",
-              "description": null,
-              "arguments": {
-                "filterdict": "{% set _dummy1 = {\"timestamp__gte\": vars.last_pull_time, \"timestamp__lte\": vars.curr_timestamp} %}{% set _dummy2 = vars.filters.update(_dummy1) %}{{vars.filters}}"
-              },
-              "status": null,
-              "top": "440",
-              "left": "800",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "uuid": "9f9876e2-8676-4b0d-b75d-0d74d18b7091",
-              "id": 8399
+              "id": 8559
             }
           ],
           "routes": [
@@ -1266,6 +1272,15 @@
             },
             {
               "@type": "WorkflowRoute",
+              "name": "Set Time Configuration -> Get Alerts",
+              "targetStep": "/api/3/workflow_steps/08626030-9893-42e4-9ff6-29e432586719",
+              "sourceStep": "/api/3/workflow_steps/d0ad8b66-2326-44a0-af39-a7119d579a7f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "93a8efab-1b92-430b-8f7c-ebc8ba1b661e"
+            },
+            {
+              "@type": "WorkflowRoute",
               "name": "Get Macro Value -> Set Time Configuration",
               "targetStep": "/api/3/workflow_steps/d0ad8b66-2326-44a0-af39-a7119d579a7f",
               "sourceStep": "/api/3/workflow_steps/88867266-b23c-42b0-9a24-75bb67be1438",
@@ -1275,39 +1290,21 @@
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Configuration",
-              "targetStep": "/api/3/workflow_steps/28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
-              "sourceStep": "/api/3/workflow_steps/23d7566f-a791-4ba2-bff2-6badff10278f",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "fcbdf943-0981-462b-87b1-cfcc4aa14b42"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Generate Filter Dict -> Get Alerts",
-              "targetStep": "/api/3/workflow_steps/08626030-9893-42e4-9ff6-29e432586719",
-              "sourceStep": "/api/3/workflow_steps/9f9876e2-8676-4b0d-b75d-0d74d18b7091",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "19acbc83-1443-4e4b-bb97-e1353c1e2a60"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Set Time Configuration -> temp",
-              "targetStep": "/api/3/workflow_steps/9f9876e2-8676-4b0d-b75d-0d74d18b7091",
-              "sourceStep": "/api/3/workflow_steps/d0ad8b66-2326-44a0-af39-a7119d579a7f",
-              "label": null,
-              "isExecuted": false,
-              "uuid": "568749fe-75ae-46a5-9aea-09368be3a356"
-            },
-            {
-              "@type": "WorkflowRoute",
               "name": "Get Alerts -> Set Result",
               "targetStep": "/api/3/workflow_steps/ed1ee218-fe9c-4918-bd56-e11e54e3d6ac",
               "sourceStep": "/api/3/workflow_steps/08626030-9893-42e4-9ff6-29e432586719",
               "label": null,
               "isExecuted": false,
               "uuid": "dfc18c90-1c99-4d48-931c-389287268f9e"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Configuration",
+              "targetStep": "/api/3/workflow_steps/28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
+              "sourceStep": "/api/3/workflow_steps/23d7566f-a791-4ba2-bff2-6badff10278f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "fcbdf943-0981-462b-87b1-cfcc4aa14b42"
             }
           ],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
@@ -1317,11 +1314,11 @@
             "fetch",
             "Claroty"
           ],
-          "id": 3112,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
+          "id": 3160,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "modifyDate": 1666257315,
           "owners": [],
           "isPrivate": false
         },
@@ -1343,6 +1340,34 @@
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/48013622-2205-4a74-ad92-1600f8754f88",
           "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "d4fe93e2-a45a-4e38-8a21-425f1fd1a4f7",
+                "title": "Claroty: Get Queries",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "uuid": "48013622-2205-4a74-ad92-1600f8754f88",
+              "id": 8562
+            },
             {
               "@type": "WorkflowStep",
               "name": "Get Queries",
@@ -1370,35 +1395,7 @@
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "ba661651-cfd1-4b01-afcd-01410e7f78c7",
-              "id": 8400
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Alerts",
-              "description": null,
-              "arguments": {
-                "route": "d4fe93e2-a45a-4e38-8a21-425f1fd1a4f7",
-                "title": "Claroty: Get Queries",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "20",
-              "left": "20",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "uuid": "48013622-2205-4a74-ad92-1600f8754f88",
-              "id": 8401
+              "id": 8561
             }
           ],
           "routes": [
@@ -1417,11 +1414,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3113,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3161,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         },
@@ -1466,7 +1463,7 @@
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "uuid": "34bc0398-ae42-4d69-9558-5cbaef2bbb24",
-              "id": 8402
+              "id": 8563
             },
             {
               "@type": "WorkflowStep",
@@ -1494,7 +1491,7 @@
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "uuid": "4e9f6839-6183-4cad-80d5-dd7463abe56b",
-              "id": 8403
+              "id": 8564
             }
           ],
           "routes": [
@@ -1513,11 +1510,11 @@
           "recordTags": [
             "Claroty"
           ],
-          "id": 3114,
-          "createUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "createDate": 1666087154,
-          "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
-          "modifyDate": 1666087154,
+          "id": 3162,
+          "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "createDate": 1666248652,
+          "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
+          "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
         }
