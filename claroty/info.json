@@ -69,11 +69,14 @@
                 "id": "",
                 "os": "",
                 "mac": [
+
                 ],
                 "ipv4": [
+
                 ],
                 "name": "",
                 "vlan": [
+
                 ],
                 "ghost": "",
                 "state": "",
@@ -95,6 +98,7 @@
                 "hostname": "",
                 "os_build": "",
                 "protocol": [
+
                 ],
                 "last_seen": "",
                 "site_name": "",
@@ -122,14 +126,18 @@
                 "virtual_zone_id": "",
                 "domain_workgroup": "",
                 "custom_attributes": [
+
                 ],
                 "virtual_zone_name": "",
                 "active_tasks_names": [
+
                 ],
                 "custom_informations": [
+
                 ],
                 "installed_antivirus": "",
                 "active_queries_names": [
+
                 ]
               }
             ],
@@ -146,8 +154,10 @@
                 "id": "",
                 "os": "",
                 "mac": [
+
                 ],
                 "ipv4": [
+
                 ],
                 "name": "",
                 "ghost": "",
@@ -189,11 +199,14 @@
                 "id": "",
                 "os": "",
                 "mac": [
+
                 ],
                 "ipv4": [
+
                 ],
                 "name": "",
                 "vlan": [
+
                 ],
                 "ghost": "",
                 "state": "",
@@ -215,6 +228,7 @@
                 "hostname": "",
                 "os_build": "",
                 "protocol": [
+
                 ],
                 "last_seen": "",
                 "site_name": "",
@@ -242,14 +256,18 @@
                 "virtual_zone_id": "",
                 "domain_workgroup": "",
                 "custom_attributes": [
+
                 ],
                 "virtual_zone_name": "",
                 "active_tasks_names": [
+
                 ],
                 "custom_informations": [
+
                 ],
                 "installed_antivirus": "",
                 "active_queries_names": [
+
                 ]
               }
             ],
@@ -260,7 +278,7 @@
         }
       ],
       "title": "Get Assets",
-      "description": "Get assets from claroty server based on input parameters you have provided.",
+      "description": "Retrieves all assets or specific assets from Claroty based on the input parameters you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -278,7 +296,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Select asset type to filter assets based on it.",
-          "description": "Select asset type to filter assets based on it."
+          "description": "Select one or more asset types using which you want to filter assets retrieved from Claroty. You can select from options such as Endpoint, OT, PLC, etc. "
         },
         {
           "title": "Protocol",
@@ -314,8 +332,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Select asset Protocol to filter assets based on it.",
-          "description": "Select asset Protocol to filter assets based on it."
+          "tooltip": "Select one or more asset protocols using which you want to filter assets retrieved from Claroty.",
+          "description": "Select one or more asset protocols using which you want to filter assets retrieved from Claroty. You can select from options such as ARP, CIP, DNS, etc. "
         },
         {
           "title": "Asset Criticality",
@@ -330,8 +348,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Select asset Criticality to filter assets based on it.",
-          "description": "Select asset Criticality to filter assets based on it."
+          "tooltip": "Select one or more asset criticality using which you want to filter assets retrieved from Claroty",
+          "description": "Select one or more asset criticality using which you want to filter assets retrieved from Claroty. You can select from High, Medium, or Low. "
         },
         {
           "title": "Start Time",
@@ -340,8 +358,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Start time from which you wants to fetch assets",
-          "description": "Start time from which you wants to fetch assets"
+          "tooltip": "Start time from when you want to retrieve assets from Claroty. ",
+          "description": "Start time from when you want to retrieve assets from Claroty."
         },
         {
           "title": "End Time",
@@ -350,8 +368,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "End time till which you wants to fetch assets",
-          "description": "End time till which you wants to fetch assets"
+          "tooltip": "End time till when you want to retrieve assets from Claroty.",
+          "description": "End time till when you want to retrieve assets from Claroty."
         },
         {
           "title": "Other Filters",
@@ -361,7 +379,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Enter json key value pairs to filter the response based on it. e.g {\"ipv4__exact\": \"1.1.1.1\", \"insight_status__exact\": 1}",
-          "description": "Enter json key values to filter the assets response based on parameters provided.  e.g {\"ipv4__exact\": \"1.1.1.1\", \"insight_status__exact\": 1}. list of fields that can be used as fields- ipv4__exact, ipv6__exact, mac__icontains, vlan__exact, address__exact, gateway__exact, asset_type__exact, host_name__exact, os__exact, model__icontains, vendor__icontains, state__exact, domain_names__exact, firmware__exact, serial__exact, generic__icontains, display_name__icontains, criticality__exact, old_ip__exact, protocol__exact, last_seen__exact, q__icontains, alert_id__exact, baseline__exact, arp_baselines__exact, insight_status__exact, insights_insight_name__exact, insight_timestamp__gte, insight_timestamp__lte, baseline_category__exact, baseline_access_type__exact, insight_name__exact, insight_row_key__exact, ghost__exact, tasks__exact, active_queries__exact, subnet_tag__exact, custom_attributes__exact, class_type__exact, domain_name__exact, involved_in_tags__exact, hosted_tags__icontains, id__exact, site_id__exact, timestamp__exact, approved__exact, valid__exact, parsed__exact, special_hint__exact, risk_level__exact, network_id__exact, virtual_zone_id__exact, subnet_id__exact, purdue_level__exact"
+          "description": "Enter JSON key values to filter the assets response,from Claroty, based on the specified parameters. \nFor example, {\"ipv4__exact\": \"1.1.1.1\", \"insight_status__exact\": 1}. \nThe list of fields that can be used as keys on the filters paramaters page are: ipv4__exact, ipv6__exact, mac__icontains, vlan__exact, address__exact, gateway__exact, asset_type__exact, host_name__exact, os__exact, model__icontains, vendor__icontains, state__exact, domain_names__exact, firmware__exact, serial__exact, generic__icontains, display_name__icontains, criticality__exact, old_ip__exact, protocol__exact, last_seen__exact, q__icontains, alert_id__exact, baseline__exact, arp_baselines__exact, insight_status__exact, insights_insight_name__exact, insight_timestamp__gte, insight_timestamp__lte, baseline_category__exact, baseline_access_type__exact, insight_name__exact, insight_row_key__exact, ghost__exact, tasks__exact, active_queries__exact, subnet_tag__exact, custom_attributes__exact, class_type__exact, domain_name__exact, involved_in_tags__exact, hosted_tags__icontains, id__exact, site_id__exact, timestamp__exact, approved__exact, valid__exact, parsed__exact, special_hint__exact, risk_level__exact, network_id__exact, virtual_zone_id__exact, subnet_id__exact, and purdue_level__exact"
         },
         {
           "title": "Limit",
@@ -370,8 +388,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of assets to return in response",
-          "description": "Maximum number of assets to return in response. Default is 10"
+          "tooltip": "The maximum number of results, per page, that this operation should return. By default, this is set to 10.",
+          "description": "The maximum number of results, per page, that this operation should return. By default, this is set to 10."
         },
         {
           "title": "Page",
@@ -381,7 +399,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Page number from which page you wants to fetch the response",
-          "description": "Page number from which page you wants to fetch the response"
+          "description": "Page number from which you want to retrieve the response."
         },
         {
           "title": "Format",
@@ -396,7 +414,7 @@
           "editable": true,
           "value": "Asset List",
           "required": false,
-          "description": "Specifies the type of response (list of fields) returned by the query. If not provided, all asset's properties will return and could affect performance."
+          "description": "Select the format of the response (list of fields) returned by the query. You can select from Asset List, Insight Assets, or Resource IDs. \nNote:If you do not select any option, then all the properties of the assets are returned, which could affect performance. "
         }
       ]
     },
@@ -408,11 +426,14 @@
         "id": "",
         "os": "",
         "mac": [
+
         ],
         "ipv4": [
+
         ],
         "name": "",
         "vlan": [
+
         ],
         "ghost": "",
         "state": "",
@@ -432,10 +453,12 @@
         "site_id": "",
         "approved": "",
         "children": [
+
         ],
         "hostname": "",
         "os_build": "",
         "protocol": [
+
         ],
         "last_seen": "",
         "site_name": "",
@@ -457,10 +480,12 @@
         "purdue_level": "",
         "special_hint": "",
         "code_sections": [
+
         ],
         "criticality__": "",
         "edge_last_run": "",
         "insight_names": [
+
         ],
         "has_interfaces": "",
         "project_parsed": "",
@@ -471,20 +496,24 @@
         "virtual_zone_id": "",
         "domain_workgroup": "",
         "custom_attributes": [
+
         ],
         "usb_devices_count": "",
         "virtual_zone_name": "",
         "active_tasks_names": [
+
         ],
         "custom_informations": [
+
         ],
         "installed_antivirus": "",
         "active_queries_names": [
+
         ],
         "installed_programs_count": ""
       },
       "title": "Get Asset Details",
-      "description": "Get Details of an asset based on resource ID of an asset you have provided.",
+      "description": "Retrieves details of a specific asset from Claroty based on the asset's resource ID you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -495,7 +524,7 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "description": "Enter resource id of an asset which you wants to retrieve (in the format of <asset-id>-<site-id>)"
+          "description": "Specify the resource ID of the asset for which you want to retrieve details from Claroty. The resource ID should be specified in the format <asset-id>-<site-id>. "
         }
       ]
     },
@@ -552,6 +581,7 @@
               }
             ],
             "actionable_diffs": [
+
             ],
             "alert_indicators": [
               {
@@ -573,8 +603,10 @@
               }
             ],
             "mitre_techniques": [
+
             ],
             "story_group_name": [
+
             ],
             "actionable_assets": [
               {
@@ -584,8 +616,10 @@
                   "id": "",
                   "os": "",
                   "mac": [
+
                   ],
                   "ipv4": [
+
                   ],
                   "name": "",
                   "vendor": "",
@@ -603,8 +637,10 @@
               }
             ],
             "actionable_policies": [
+
             ],
             "actionable_information": [
+
             ],
             "significant_indicators": [
               {
@@ -627,6 +663,7 @@
               }
             ],
             "actionable_suspicious_files": [
+
             ],
             "actionable_virtual_zones_names": [
               "Endpoint: Other - External"
@@ -638,7 +675,7 @@
         "count_filtered": ""
       },
       "title": "Get Alerts",
-      "description": "Get Alerts from claroty server based on input parameters you have provided.",
+      "description": "Retrieves all alerts or specific alerts from Claroty based on the input parameters you have specified.",
       "enabled": true,
       "parameters": [
         {
@@ -653,8 +690,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of alerts to return in response",
-          "description": "Maximum number of alerts to return in response"
+          "tooltip": "Select one or more alert statuses using which you want to filter alerts retrieved from Claroty",
+          "description": "Select one or more alert statuses using which you want to filter alerts retrieved from Claroty. You can select Resolved Unresolved, or select both to retrieve both resolved and unresolved alerts from Claroty."
         },
         {
           "title": "Category",
@@ -667,8 +704,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of alerts to return in response",
-          "description": "Maximum number of alerts to return in response"
+          "tooltip": "Select one or more alert categories using which you want to filter alerts retrieved from Claroty.",
+          "description": "Select one or more alert categories using which you want to filter alerts retrieved from Claroty. You can select Security Integrity, or select both to retrieve both categories of alerts from Claroty."
         },
         {
           "title": "Alert Severity",
@@ -683,8 +720,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Select asset Criticality to filter assets based on it.",
-          "description": "Select asset Criticality to filter assets based on it."
+          "tooltip": "Select asset Severity to filter assets based on it.",
+          "description": "Select one or more alert severities using which you want to filter alerts retrieved from Claroty. You can select from Critical High, Medium, or Low."
         },
         {
           "title": "Start Time",
@@ -694,7 +731,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Start time from which you wants to fetch alerts",
-          "description": "Start time from which you wants to fetch alerts"
+          "description": "Start time from when you want to retrieve alerts from Claroty. "
         },
         {
           "title": "End Time",
@@ -703,8 +740,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "End time till which you wants to fetch alerts",
-          "description": "End time till which you wants to fetch alerts"
+          "tooltip": "End time till when you want to retrieve alerts from Claroty",
+          "description": "End time till when you want to retrieve alerts from Claroty"
         },
         {
           "title": "Other Filters",
@@ -714,7 +751,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Enter json key values to filter the alerts response based on parameters provided. e.g{\"asset_id__exact\": \"122\", \"severity__exact\": 4}",
-          "description": "Enter json key values to filter the alerts response based on parameters provided. e.g{\"asset_id__exact\": \"122\", \"severity__exact\": 4}. list of fields that can be used as key in filters paramaters page, per_page, asset_id__exact, asset__exact, for_asset__exact, q__exact, primary_asset__exact, non_primary_assets__exact, virtual_zone__exact, alert_id__exact, ot_alerts__exact, family__exact, story_severity__exact, id__exact, site_id__exact, data__exact, description__exact, type__exact, category__exact, severity__exact, timestamp__exact, relevant__exact, resolved__exact, resolution__exact, protocol__exact, score__exact, is_qualified__exact, network_id__exact, resolved_id__exact, assigned_id__exact, story_id__exact, sort"
+          "description": "Enter JSON key values to filter the alert response, from Claroty, based on the specified parameters. \nFor example, {\"asset_id__exact\": \"122\", \"severity__exact\": 4} \nThe list of fields that can be used as keys on the filters paramaters page are: per_page, asset_id__exact, asset__exact, for_asset__exact, q__exact, primary_asset__exact, non_primary_assets__exact, virtual_zone__exact, alert_id__exact, ot_alerts__exact, family__exact, story_severity__exact, id__exact, site_id__exact, data__exact, description__exact, type__exact, category__exact, severity__exact, timestamp__exact, relevant__exact, resolved__exact, resolution__exact, protocol__exact, score__exact, is_qualified__exact, network_id__exact, resolved_id__exact, assigned_id__exact, story_id__exact, or sort"
         },
         {
           "title": "Limit",
@@ -723,8 +760,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of alerts to return in response",
-          "description": "Maximum number of alerts to return in response"
+          "tooltip": "The maximum number of results, per page, that this operation should return.",
+          "description": "The maximum number of results, per page, that this operation should return."
         },
         {
           "title": "Page",
@@ -734,7 +771,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Page number from which page you wants to fetch the response",
-          "description": "Page number from which page you wants to fetch the response"
+          "description": "Page number from which you want to retrieve the response."
         }
       ]
     },
@@ -819,6 +856,7 @@
           }
         ],
         "actionable_diffs": [
+
         ],
         "alert_indicators": [
           {
@@ -840,6 +878,7 @@
           }
         ],
         "mitre_techniques": [
+
         ],
         "actionable_assets": [
           {
@@ -849,8 +888,10 @@
               "id": "",
               "os": "",
               "mac": [
+
               ],
               "ipv4": [
+
               ],
               "name": "",
               "parsed": "",
@@ -883,8 +924,10 @@
           }
         ],
         "actionable_policies": [
+
         ],
         "actionable_information": [
+
         ],
         "significant_indicators": [
           {
@@ -907,13 +950,14 @@
           }
         ],
         "actionable_suspicious_files": [
+
         ],
         "actionable_virtual_zones_names": [
           "Endpoint: Other - External"
         ]
       },
       "title": "Get Alert Details",
-      "description": "Get alert details based on alert resource id you have provided",
+      "description": "Retrieves details of a specific alert from Claroty based on the alert's resource ID you have specified.",
       "enabled": true,
       "parameters": [
         {
@@ -924,7 +968,7 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "description": "Enter resource id of an alert whose details you wants to retrieve.(in the format of <alert-id>-<site-id>)"
+          "description": "Specify the resource ID of the alert for which you want to retrieve details from Claroty. The resource ID should be specified in the format <asset-id>-<site-id> "
         }
       ]
     },
@@ -933,9 +977,10 @@
       "category": "investigation",
       "annotation": "get_tasks",
       "output_schema": {
+
       },
       "title": "Get Tasks",
-      "description": "Get all tasks and their information",
+      "description": "Retrieves all tasks or specific tasks and their associated information from Claroty based on the input parameters you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -946,7 +991,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter tasks whose name contains input string",
-          "description": "Filter tasks whose name contains input string"
+          "description": "Name using which you want to filter tasks retrieved from Claroty to those tasks whose name contains the specified input string. "
         },
         {
           "title": "Site ID",
@@ -955,8 +1000,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter tasks based on input site ID",
-          "description": "Filter tasks based on input site ID"
+          "tooltip": "The ID of the site using which you want to filter tasks retrieved from Claroty",
+          "description": "The ID of the site using which you want to filter tasks retrieved from Claroty"
         },
         {
           "title": "Limit",
@@ -965,8 +1010,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of tasks to return in response",
-          "description": "Maximum number of tasks to return in response"
+          "tooltip": "The maximum number of results, per page, that this operation should return.",
+          "description": "The maximum number of results, per page, that this operation should return."
         },
         {
           "title": "Page",
@@ -976,7 +1021,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Page number from which page you wants to fetch the response",
-          "description": "Page number from which page you wants to fetch the response"
+          "description": "Page number from which you want to retrieve the response. "
         },
         {
           "title": "Sort By",
@@ -996,7 +1041,7 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
+          "description": "Select the parameter using which you want to sort the response retrieved from Claroty. You can choose from the following options: \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
         },
         {
           "title": "Sort Order",
@@ -1019,13 +1064,14 @@
       "annotation": "get_queries",
       "output_schema": {
         "objects": [
+
         ],
         "count_total": 0,
         "count_in_page": 0,
         "count_filtered": 0
       },
       "title": "Get Queries",
-      "description": "Get all queries and their information based on input parameters you have provided.",
+      "description": "Retrieves all queries or specific queries and their associated information from Claroty based on the input parameters you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -1035,8 +1081,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter response data whose name contains input string",
-          "description": "Filter response data whose name contains input string"
+          "tooltip": "Name using which you want to filter queries retrieved from Claroty",
+          "description": "Name using which you want to filter queries retrieved from Claroty to those queries whose name contains the specified input string. "
         },
         {
           "title": "Site ID",
@@ -1045,8 +1091,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter response data based on input site ID",
-          "description": "Filter response data based on input site ID"
+          "tooltip": "The ID of the site using which you want to filter queries retrieved from Claroty. ",
+          "description": "The ID of the site using which you want to filter queries retrieved from Claroty. "
         },
         {
           "title": "Sort By",
@@ -1066,7 +1112,7 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
+          "description": "Select the parameter using which you want to sort the response retrieved from Claroty. You can choose from the following options: \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
         },
         {
           "title": "Sort Order",
@@ -1089,8 +1135,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of items to return in response",
-          "description": "Maximum number of items to return in response"
+          "tooltip": "The maximum number of results, per page, that this operation should return.",
+          "description": "The maximum number of results, per page, that this operation should return."
         },
         {
           "title": "Page",
@@ -1125,13 +1171,14 @@
           "default_sort": "",
           "other_side_name": "",
           "other_side_headers": [
+
           ],
           "aggregated_description": "",
           "other_side_default_sort": ""
         }
       ],
       "title": "Get Insights",
-      "description": "Get summary of an insights based on input parameters you have provided.",
+      "description": "Retrieves the summary of specific insights from Claroty based on the format, sort by fields, and other input parameters you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -1143,8 +1190,8 @@
           "visible": true,
           "editable": true,
           "required": true,
-          "tooltip": "Enter format of an insight to fetch its summary",
-          "description": "Enter format of an insight to fetch its summary"
+          "tooltip": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g insight_page",
+          "description": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g. insight_page"
         },
         {
           "title": "Sort By",
@@ -1179,7 +1226,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter response data whose host exact matches input string",
-          "description": "Filter response data whose host exact matches input string"
+          "description": "Select this option if you want to filter the response data retrieved from Claroty to that which exactly matches the host specified in the input string"
         },
         {
           "title": "Special Hint Exact",
@@ -1196,7 +1243,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4",
-          "description": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4"
+          "description": "Select the special hint using which you want to filter the response retrieved from Claroty. You can choose from the following options: 0, 1, 2, 3, or 4."
         },
         {
           "title": "Insight Status Exact",
@@ -1211,7 +1258,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Select the insight status to filter the response based on it. Available values are 0,1,2",
-          "description": "Select the insight status to filter the response based on it. Available values are 0,1,2"
+          "description": "Select the insight status using which you want to filter the response retrieved from Claroty. You can choose from the following options: 0, 1, or 2. "
         },
         {
           "title": "Site ID",
@@ -1221,7 +1268,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter response data based on input site ID",
-          "description": "Filter response data based on input site ID"
+          "description": "The ID of the site using which you want to filter insights retrieved from Claroty. "
         },
         {
           "title": "Limit",
@@ -1230,8 +1277,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of items to return in response",
-          "description": "Maximum number of items to return in response"
+          "tooltip": "The maximum number of results, per page, that this operation should return.",
+          "description": "The maximum number of results, per page, that this operation should return."
         },
         {
           "title": "Page",
@@ -1268,7 +1315,7 @@
         "count_filtered": ""
       },
       "title": "Get Events",
-      "description": "Get events from claroty server based on input parameters you have provided.",
+      "description": "Retrieves all events (associated with alerts) or specific events from Claroty based on the input parameters you have specified. ",
       "enabled": true,
       "parameters": [
         {
@@ -1278,8 +1325,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter alerts based on input site ID",
-          "description": "Filter alerts based on input site ID"
+          "tooltip": "The ID of the site using which you want to filter alerts (and associated events) retrieved from Claroty ",
+          "description": "The ID of the site using which you want to filter alerts (and associated events) retrieved from Claroty "
         },
         {
           "title": "Resource ID",
@@ -1289,8 +1336,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter events based on input resource ID. resource id in the format of <alert-id>-<site-id>",
-          "description": "Filter events based on input resource ID"
+          "tooltip": "Filter events based on input resource ID. resource id in the format of <event-id>-<site-id>",
+          "description": "The ID of the event using which you want to filter events retrieved from Claroty. "
         },
         {
           "title": "Alert Resource ID",
@@ -1301,7 +1348,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter alerts based on input alert ID. alert resource id in the format of <alert-id>-<site-id>",
-          "description": "Filter alerts based on input alert ID"
+          "description": "The ID of the alert using which you want to filter events retrieved from Claroty. Alert resource id in the format of <alert-id>-<site-id>"
         },
         {
           "title": "Start Time",
@@ -1310,8 +1357,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter alerts based on input start datetime",
-          "description": "Filter alerts based on input start datetime"
+          "tooltip": "Start time from when you want to retrieve events",
+          "description": "Start time from when you want to retrieve events"
         },
         {
           "title": "End Time",
@@ -1320,8 +1367,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter alerts based on input end datetime",
-          "description": "Filter alerts based on input end datetime"
+          "tooltip": "End time till when you want to retrieve events",
+          "description": "End time till when you want to retrieve events"
         },
         {
           "title": "Description",
@@ -1330,8 +1377,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter events data based on input description given",
-          "description": "Filter events data based on input description given"
+          "tooltip": "The description using which you want to filter events data retrieved from Claroty. ",
+          "description": "The description using which you want to filter events data retrieved from Claroty. "
         },
         {
           "title": "Description (case-sensitive)",
@@ -1340,8 +1387,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter events data based on input description given",
-          "description": "Filter events data based on input description given"
+          "tooltip": "The description (case-sensitive) using which you want to filter events data retrieved from Claroty. ",
+          "description": "The description (case-sensitive) using which you want to filter events data retrieved from Claroty. "
         },
         {
           "title": "Type",
@@ -1373,7 +1420,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter alerts based on input type selected. Available values are",
-          "description": "Filter alerts based on input type selected. Available values are"
+          "description": "Select one or more alert types using which you want to filter events retrieved from Claroty.You can select from options such as 3 - Threat, 10 - FTP Data, etc."
         },
         {
           "title": "Status",
@@ -1389,7 +1436,7 @@
           "editable": true,
           "required": false,
           "tooltip": "Filter alerts based on input status selected. Available values are OT Alert, OT Operation, Alert and Not Risky Change",
-          "description": "Filter alerts based on input status selected. Available values are OT Alert, OT Operation, Alert and Not Risky Change"
+          "description": "Select the alert status using which you want to filter events retrieved from Claroty. You can choose from the following options: OT Alert, OT Operation, Alert, or Not Risky Change. "
         },
         {
           "title": "Sort By",
@@ -1405,7 +1452,7 @@
           "value": "id",
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter. Available options are id, site_id, type and timestamp"
+          "description": "Select the parameter using which you want to sort the response retrieved from Claroty.You can select from options such as id, site-id, type, etc. "
         },
         {
           "title": "Sort Order",
@@ -1428,8 +1475,8 @@
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Maximum number of items to return in response",
-          "description": "Maximum number of items to return in response"
+          "tooltip": "The maximum number of results, per page, that this operation should return. ",
+          "description": "The maximum number of results, per page, that this operation should return. "
         },
         {
           "title": "Page",
