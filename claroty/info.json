@@ -62,7 +62,7 @@
       "annotation": "get_assets",
       "conditional_output_schema": [
         {
-          "condition": "{{format === asset_list}}",
+          "condition": "{{format === 'Asset List'}}",
           "output_schema": {
             "objects": [
               {
@@ -139,7 +139,7 @@
           }
         },
         {
-          "condition": "{{format === insight_assets}}",
+          "condition": "{{format === 'Insight Assets'}}",
           "output_schema": {
             "objects": [
               {
@@ -169,11 +169,88 @@
           }
         },
         {
-          "condition": "{{format === rids}}",
+          "condition": "{{format === 'Resource IDs'}}",
           "output_schema": {
             "objects": [
               {
                 "resource_id": ""
+              }
+            ],
+            "count_total": "",
+            "count_in_page": "",
+            "count_filtered": ""
+          }
+        },
+        {
+          "condition": "{{true}}",
+          "output_schema": {
+            "objects": [
+              {
+                "id": "",
+                "os": "",
+                "mac": [
+                ],
+                "ipv4": [
+                ],
+                "name": "",
+                "vlan": [
+                ],
+                "ghost": "",
+                "state": "",
+                "valid": "",
+                "parsed": "",
+                "subnet": {
+                  "name": ""
+                },
+                "vendor": "",
+                "edge_id": "",
+                "network": {
+                  "id": "",
+                  "name": "",
+                  "site_id": "",
+                  "resource_id": ""
+                },
+                "site_id": "",
+                "approved": "",
+                "hostname": "",
+                "os_build": "",
+                "protocol": [
+                ],
+                "last_seen": "",
+                "site_name": "",
+                "subnet_id": "",
+                "timestamp": "",
+                "asset_type": "",
+                "class_type": "",
+                "first_seen": "",
+                "network_id": "",
+                "risk_level": "",
+                "criticality": "",
+                "resource_id": "",
+                "subnet_type": "",
+                "asset_type__": "",
+                "display_name": "",
+                "purdue_level": "",
+                "special_hint": "",
+                "criticality__": "",
+                "edge_last_run": "",
+                "project_parsed": "",
+                "special_hint__": "",
+                "default_gateway": "",
+                "os_architecture": "",
+                "os_service_pack": "",
+                "virtual_zone_id": "",
+                "domain_workgroup": "",
+                "custom_attributes": [
+                ],
+                "virtual_zone_name": "",
+                "active_tasks_names": [
+                ],
+                "custom_informations": [
+                ],
+                "installed_antivirus": "",
+                "active_queries_names": [
+                ]
               }
             ],
             "count_total": "",
@@ -218,6 +295,7 @@
             "HTTP",
             "ICMP",
             "ICMPv6",
+            "DHCPv6",
             "NETBIOS-NAME",
             "NTP",
             "RDP",
