@@ -156,6 +156,8 @@ def get_tasks(config, params):
         'site_id__exact': params.get('site_id__exact'),
         'sort': params.get('sort')
     }
+    if params.get('sort_order') == 'Descending':
+        filters_dict['sort'] = '-{0}'.format(params.get('sort'))
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -167,6 +169,8 @@ def get_queries(config, params):
         'site_id__exact': params.get('site_id__exact'),
         'sort': params.get('sort')
     }
+    if params.get('sort_order') == 'Descending':
+        filters_dict['sort'] = '-{0}'.format(params.get('sort'))
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -180,6 +184,8 @@ def get_insights(config, params):
         'insight_status__exact': params.get('insight_status__exact'),
         'sort': params.get('sort')
     }
+    if params.get('sort_order') == 'Descending':
+        filters_dict['sort'] = '-{0}'.format(params.get('sort'))
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
@@ -198,6 +204,8 @@ def get_events(config, params):
         'status__exact': EVENT_STATUS.get(params.get('status__exact')),
         'sort': params.get('sort')
     }
+    if params.get('sort_order') == 'Descending':
+        filters_dict['sort'] = '-{0}'.format(params.get('sort'))
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
