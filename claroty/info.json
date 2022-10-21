@@ -1,7 +1,7 @@
 {
   "name": "claroty",
   "label": "Claroty",
-  "description": "Claroty CTD is a robust solution that delivers comprehensive cybersecurity controls for industrial environments. This connector provides automated actions like Get Assets, Get Alerts, Resolve Alert and Get Alert Details",
+  "description": "Claroty CTD is a robust solution that delivers comprehensive cybersecurity controls for industrial environments. This connector provides automated actions like Get Assets, Get Alert, Get Alert Details, etc",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
@@ -13,12 +13,12 @@
   "ingestion_modes": [
     "scheduled"
   ],
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/claroty/428/claroty-v1-0-0",
   "configuration": {
     "fields": [
       {
         "title": "Server URL",
-        "description": "Server name or IP address of the claroty server to which you will connect and perform the automated operations.",
+        "description": "Server name or IP address of the Claroty server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -27,7 +27,7 @@
       },
       {
         "title": "Username",
-        "description": "Username used to access the claroty server to which you will connect and perform the automated operations.",
+        "description": "Username to access the Claroty server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -36,7 +36,7 @@
       },
       {
         "title": "Password",
-        "description": "Password used to access the claroty server to which you will connect and perform the automated operations.",
+        "description": "Password to access the Claroty server to which you will connect and perform the automated operations.",
         "required": true,
         "editable": true,
         "visible": true,
@@ -45,7 +45,7 @@
       },
       {
         "title": "Verify SSL",
-        "description": "Specifies whether the SSL certificate for the server is to be verified or not.By default, this option is set as True.",
+        "description": "Specifies whether the SSL certificate for the server is to be verified or not. \nBy default, this option is set as True. ",
         "required": false,
         "editable": true,
         "visible": true,
@@ -575,7 +575,6 @@
             "mitre_techniques": [
             ],
             "story_group_name": [
-              "Host Scan (1 alert)"
             ],
             "actionable_assets": [
               {
@@ -985,28 +984,32 @@
           "type": "select",
           "options": [
             "name",
-            "-name",
             "status",
-            "-status",
             "enabled",
-            "-enabled",
             "interval",
-            "-interval",
             "start_time",
-            "-start_time",
             "end_time",
-            "-end_time",
             "allowed_run_time_start",
-            "-allowed_run_time_start",
             "allowed_run_time_end",
-            "-allowed_run_time_end",
-            "last_run_results",
-            "-last_run_results"
+            "last_run_results"
           ],
           "visible": true,
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"-name\",\"status\",\"-status\",\"enabled\",\"-enabled\",\"interval\",\"-interval\",\"start_time\",\"-start_time\",\"end_time\",\"-end_time\",\"allowed_run_time_start\",\"-allowed_run_time_start\",\"allowed_run_time_end\",\"-allowed_run_time_end\",\"last_run_results\""
+          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
+        },
+        {
+          "title": "Sort Order",
+          "name": "sort_order",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "visible": true,
+          "editable": true,
+          "required": false,
+          "description": "Select the order based on which you wants to sort the response. Available options are Ascending and Descending"
         }
       ]
     },
@@ -1051,28 +1054,33 @@
           "type": "select",
           "options": [
             "name",
-            "-name",
             "status",
-            "-status",
             "enabled",
-            "-enabled",
             "interval",
-            "-interval",
             "start_time",
-            "-start_time",
             "end_time",
-            "-end_time",
             "allowed_run_time_start",
-            "-allowed_run_time_start",
             "allowed_run_time_end",
-            "-allowed_run_time_end",
-            "last_run_results",
-            "-last_run_results"
+            "last_run_results"
           ],
           "visible": true,
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"-name\",\"status\",\"-status\",\"enabled\",\"-enabled\",\"interval\",\"-interval\",\"start_time\",\"-start_time\",\"end_time\",\"-end_time\",\"allowed_run_time_start\",\"-allowed_run_time_start\",\"allowed_run_time_end\",\"-allowed_run_time_end\",\"last_run_results\""
+          "description": "Sort the response based on selected input parameter. Available values are \"name\",\"status\",\"enabled\",\"interval\",\"start_time\",\"end_time\",\"allowed_run_time_start\",\"allowed_run_time_end\",\"last_run_results\""
+        },
+        {
+          "title": "Sort Order",
+          "name": "sort_order",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "visible": true,
+          "value": "Ascending",
+          "editable": true,
+          "required": false,
+          "description": "Select the order based on which you wants to sort the response. Available options are Ascending and Descending"
         },
         {
           "title": "Limit",
@@ -1141,13 +1149,27 @@
         {
           "title": "Sort By",
           "name": "sort",
-          "placeholder": "e.g. -risk_level",
-          "value": "-risk_level",
+          "placeholder": "e.g. risk_level",
+          "value": "risk_level",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": true,
-          "description": "Sort the response based on selected input parameter."
+          "description": "Sort the response based on given input parameter."
+        },
+        {
+          "title": "Sort Order",
+          "name": "sort_order",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "visible": true,
+          "value": "Ascending",
+          "editable": true,
+          "required": false,
+          "description": "Select the order based on which you wants to sort the response. Available options are Ascending and Descending"
         },
         {
           "title": "Host Exact",
@@ -1260,23 +1282,25 @@
           "description": "Filter alerts based on input site ID"
         },
         {
-          "title": "ID",
+          "title": "Resource ID",
           "name": "id__exact",
+          "placeholder": "e.g 9-1",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter events based on input ID",
-          "description": "Filter events based on input ID"
+          "tooltip": "Filter events based on input resource ID. resource id in the format of <alert-id>-<site-id>",
+          "description": "Filter events based on input resource ID"
         },
         {
-          "title": "Alert ID",
+          "title": "Alert Resource ID",
           "name": "alert_id__exact",
+          "placeholder": "e.g 9-1",
           "type": "text",
           "visible": true,
           "editable": true,
           "required": false,
-          "tooltip": "Filter alerts based on input alert ID",
+          "tooltip": "Filter alerts based on input alert ID. alert resource id in the format of <alert-id>-<site-id>",
           "description": "Filter alerts based on input alert ID"
         },
         {
@@ -1311,7 +1335,7 @@
         },
         {
           "title": "Description (case-sensitive)",
-          "name": "description__contains",
+          "name": "description__icontains",
           "type": "text",
           "visible": true,
           "editable": true,
@@ -1324,26 +1348,26 @@
           "name": "type__exact",
           "type": "select",
           "options": [
-            "0 - eNewAsset",
-            "1 - eAssetConflict",
-            "2 - eBaselineDeviation",
-            "3 - eThreat",
-            "4 - eAssetInformationChange",
-            "5 - eProtocolSpecific",
-            "6 - eBaselineDown",
-            "8 - eBaselineVolumeDeviationHigh",
-            "9 - eBaselineVolumeDeviationLow",
-            "10 - eFTPData",
-            "11 - eBaselineRule",
-            "12 - eHighArpActivity",
-            "13 - eKnownThreatEvent",
-            "14 - eFalseMac",
-            "15 - eSuspiciousFileTransfer",
-            "16 - ePolicyViolation",
-            "17 - ePolicyRuleMatch",
-            "18 - eHostScan",
-            "19 - ePortScan",
-            "20 - eDenialOfService"
+            "0 - New Asset",
+            "1 - Asset Conflict",
+            "2 - Baseline Deviation",
+            "3 - Threat",
+            "4 - Asset Information Change",
+            "5 - Protocol Specific",
+            "6 - Baseline Down",
+            "8 - Baseline Volume Deviation High",
+            "9 - Baseline Volume Deviation Low",
+            "10 - FTP Data",
+            "11 - Baseline Rule",
+            "12 - High Arp Activity",
+            "13 - Known Threat Event",
+            "14 - False Mac",
+            "15 - Suspicious File Transfer",
+            "16 - Policy Violation",
+            "17 - Policy Rule Match",
+            "18 - Host Scan",
+            "19 - Port Scan",
+            "20 - Denial Of Service"
           ],
           "visible": true,
           "editable": true,
@@ -1373,19 +1397,29 @@
           "type": "select",
           "options": [
             "id",
-            "-id",
-            "-site_id",
             "site_id",
             "type",
-            "-type",
-            "timestamp",
-            "-timestamp"
+            "timestamp"
           ],
           "visible": true,
           "value": "id",
           "editable": true,
           "required": false,
-          "description": "Sort the response based on selected input parameter."
+          "description": "Sort the response based on selected input parameter. Available options are id, site_id, type and timestamp"
+        },
+        {
+          "title": "Sort Order",
+          "name": "sort_order",
+          "type": "select",
+          "options": [
+            "Ascending",
+            "Descending"
+          ],
+          "visible": true,
+          "value": "Ascending",
+          "editable": true,
+          "required": false,
+          "description": "Select the order based on which you wants to sort the response. Available options are Ascending and Descending"
         },
         {
           "title": "Limit",
