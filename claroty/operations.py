@@ -43,6 +43,8 @@ class Claroty:
                 if res.get('token'):
                     self.token = res.get('token')
             except Exception as err:
+                if 'IncorrectCredentialsError' in str(err):
+                    raise ConnectorError('Incorrect username or password')
                 raise ConnectorError(str(err))
 
         def make_rest_call(self, endpoint, method, data=None, params=None, header=None):
@@ -66,6 +68,8 @@ class Claroty:
                     else:
                         return response.content
                 else:
+                    if 'json' in str(response.headers):
+                        raise ConnectorError("{0}".format(response.json()))
                     raise ConnectorError("{0}".format(response.text))
             except requests.exceptions.SSLError:
                 raise ConnectorError('SSL certificate validation failed')
@@ -226,8 +230,8 @@ operations = {
     'get_asset_details': get_asset_details,
     'get_alerts': get_alerts,
     'get_alert_details': get_alert_details,
-    'get_tasks': get_tasks,   # no data available
-    'get_queries': get_queries,  # no data available
+    'get_tasks': get_tasks,
+    'get_queries': get_queries,
     'get_insights': get_insights,
     'get_events': get_events
 }

@@ -69,14 +69,11 @@
                 "id": "",
                 "os": "",
                 "mac": [
-
                 ],
                 "ipv4": [
-
                 ],
                 "name": "",
                 "vlan": [
-
                 ],
                 "ghost": "",
                 "state": "",
@@ -98,7 +95,6 @@
                 "hostname": "",
                 "os_build": "",
                 "protocol": [
-
                 ],
                 "last_seen": "",
                 "site_name": "",
@@ -126,18 +122,14 @@
                 "virtual_zone_id": "",
                 "domain_workgroup": "",
                 "custom_attributes": [
-
                 ],
                 "virtual_zone_name": "",
                 "active_tasks_names": [
-
                 ],
                 "custom_informations": [
-
                 ],
                 "installed_antivirus": "",
                 "active_queries_names": [
-
                 ]
               }
             ],
@@ -154,10 +146,8 @@
                 "id": "",
                 "os": "",
                 "mac": [
-
                 ],
                 "ipv4": [
-
                 ],
                 "name": "",
                 "ghost": "",
@@ -199,14 +189,11 @@
                 "id": "",
                 "os": "",
                 "mac": [
-
                 ],
                 "ipv4": [
-
                 ],
                 "name": "",
                 "vlan": [
-
                 ],
                 "ghost": "",
                 "state": "",
@@ -228,7 +215,6 @@
                 "hostname": "",
                 "os_build": "",
                 "protocol": [
-
                 ],
                 "last_seen": "",
                 "site_name": "",
@@ -256,18 +242,14 @@
                 "virtual_zone_id": "",
                 "domain_workgroup": "",
                 "custom_attributes": [
-
                 ],
                 "virtual_zone_name": "",
                 "active_tasks_names": [
-
                 ],
                 "custom_informations": [
-
                 ],
                 "installed_antivirus": "",
                 "active_queries_names": [
-
                 ]
               }
             ],
@@ -426,14 +408,11 @@
         "id": "",
         "os": "",
         "mac": [
-
         ],
         "ipv4": [
-
         ],
         "name": "",
         "vlan": [
-
         ],
         "ghost": "",
         "state": "",
@@ -453,12 +432,10 @@
         "site_id": "",
         "approved": "",
         "children": [
-
         ],
         "hostname": "",
         "os_build": "",
         "protocol": [
-
         ],
         "last_seen": "",
         "site_name": "",
@@ -480,12 +457,10 @@
         "purdue_level": "",
         "special_hint": "",
         "code_sections": [
-
         ],
         "criticality__": "",
         "edge_last_run": "",
         "insight_names": [
-
         ],
         "has_interfaces": "",
         "project_parsed": "",
@@ -496,19 +471,15 @@
         "virtual_zone_id": "",
         "domain_workgroup": "",
         "custom_attributes": [
-
         ],
         "usb_devices_count": "",
         "virtual_zone_name": "",
         "active_tasks_names": [
-
         ],
         "custom_informations": [
-
         ],
         "installed_antivirus": "",
         "active_queries_names": [
-
         ],
         "installed_programs_count": ""
       },
@@ -581,7 +552,6 @@
               }
             ],
             "actionable_diffs": [
-
             ],
             "alert_indicators": [
               {
@@ -603,10 +573,8 @@
               }
             ],
             "mitre_techniques": [
-
             ],
             "story_group_name": [
-
             ],
             "actionable_assets": [
               {
@@ -616,10 +584,8 @@
                   "id": "",
                   "os": "",
                   "mac": [
-
                   ],
                   "ipv4": [
-
                   ],
                   "name": "",
                   "vendor": "",
@@ -637,10 +603,8 @@
               }
             ],
             "actionable_policies": [
-
             ],
             "actionable_information": [
-
             ],
             "significant_indicators": [
               {
@@ -663,7 +627,6 @@
               }
             ],
             "actionable_suspicious_files": [
-
             ],
             "actionable_virtual_zones_names": [
               "Endpoint: Other - External"
@@ -856,7 +819,6 @@
           }
         ],
         "actionable_diffs": [
-
         ],
         "alert_indicators": [
           {
@@ -878,7 +840,6 @@
           }
         ],
         "mitre_techniques": [
-
         ],
         "actionable_assets": [
           {
@@ -888,10 +849,8 @@
               "id": "",
               "os": "",
               "mac": [
-
               ],
               "ipv4": [
-
               ],
               "name": "",
               "parsed": "",
@@ -924,10 +883,8 @@
           }
         ],
         "actionable_policies": [
-
         ],
         "actionable_information": [
-
         ],
         "significant_indicators": [
           {
@@ -950,7 +907,6 @@
           }
         ],
         "actionable_suspicious_files": [
-
         ],
         "actionable_virtual_zones_names": [
           "Endpoint: Other - External"
@@ -977,7 +933,37 @@
       "category": "investigation",
       "annotation": "get_tasks",
       "output_schema": {
-
+        "count_filtered": "",
+        "count_total": "",
+        "count_in_page": "",
+        "objects": [
+          {
+            "allowed_days": "",
+            "allowed_run_time_end": "",
+            "allowed_run_time_start": "",
+            "type": "",
+            "end_time": "",
+            "interval": "",
+            "is_recurring": "",
+            "name": "",
+            "resource_id": "",
+            "site_id": "",
+            "status": "",
+            "valid": "",
+            "start_time": "",
+            "assets_count": "",
+            "extra_params": {
+              "Query_Discovered_Devices": "",
+              "port": "",
+              "sub_query": ""
+            },
+            "enabled": "",
+            "id": "",
+            "last_start_run_time": "",
+            "network_id": "",
+            "active_type": ""
+          }
+        ]
       },
       "title": "Get Tasks",
       "description": "Retrieves all tasks or specific tasks and their associated information from Claroty based on the input parameters you have specified. ",
@@ -1063,12 +1049,37 @@
       "category": "investigation",
       "annotation": "get_queries",
       "output_schema": {
+        "count_filtered": "",
+        "count_total": "",
+        "count_in_page": "",
         "objects": [
-
-        ],
-        "count_total": 0,
-        "count_in_page": 0,
-        "count_filtered": 0
+          {
+            "allowed_days": "",
+            "allowed_run_time_end": "",
+            "allowed_run_time_start": "",
+            "type": "",
+            "end_time": "",
+            "interval": "",
+            "is_recurring": "",
+            "name": "",
+            "resource_id": "",
+            "site_id": "",
+            "status": "",
+            "valid": "",
+            "start_time": "",
+            "assets_count": "",
+            "extra_params": {
+              "Query_Discovered_Devices": "",
+              "port": "",
+              "sub_query": ""
+            },
+            "enabled": "",
+            "id": "",
+            "last_start_run_time": "",
+            "network_id": "",
+            "active_type": ""
+          }
+        ]
       },
       "title": "Get Queries",
       "description": "Retrieves all queries or specific queries and their associated information from Claroty based on the input parameters you have specified. ",
@@ -1171,7 +1182,6 @@
           "default_sort": "",
           "other_side_name": "",
           "other_side_headers": [
-
           ],
           "aggregated_description": "",
           "other_side_default_sort": ""
