@@ -19,7 +19,7 @@ class Claroty(Connector):
             result = action(config, params)
             return result
         except Exception as e:
-            error_message = "Error in execute(). Error message as follows: {0}".format(str(e))
+            error_message = "{0}".format(str(e))
             raise ConnectorError(error_message)
 
     def check_health(self, config):
@@ -27,5 +27,4 @@ class Claroty(Connector):
             res = check_health(config)
             return res
         except Exception as e:
-            error_message = "Error in Health check. Error message as follows: {0}".format(str(e))
-            raise ConnectorError(error_message)
+            raise ConnectorError(str(e))
