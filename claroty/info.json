@@ -6,7 +6,7 @@
   "cs_approved": true,
   "cs_compatible": true,
   "version": "1.0.0",
-  "category": "Threat Detection",
+  "category": "OT & IoT Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "ingestion_supported": true,
