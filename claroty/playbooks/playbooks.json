@@ -13,6 +13,8 @@
       "createDate": 1666248652,
       "modifyUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
       "modifyDate": 1666248652,
+      "deletedAt": null,
+      "importedBy": [],
       "recordTags": [],
       "workflows": [
         {
@@ -61,6 +63,7 @@
               "top": "120",
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "24e88a4a-bb2c-4bbe-bff6-3fd4f1801012",
               "id": 8532
             },
@@ -89,6 +92,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "a74acb95-27b7-4814-93d5-5b08bd4149c3",
               "id": 8533
             }
@@ -101,11 +105,18 @@
               "sourceStep": "/api/3/workflow_steps/a74acb95-27b7-4814-93d5-5b08bd4149c3",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "28655d93-22cf-489e-a628-f13e5eb4638f"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "22fcdc4b-6ed2-421a-a505-a1e2d49e3292",
+          "id": 711,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -170,6 +181,7 @@
               "top": "120",
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "57dc33d6-1582-40e1-8687-55d48eb40b72",
               "id": 8535
             },
@@ -198,6 +210,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "60c1e601-c373-4d6c-bdac-6d121fefe4ee",
               "id": 8534
             }
@@ -210,11 +223,18 @@
               "sourceStep": "/api/3/workflow_steps/60c1e601-c373-4d6c-bdac-6d121fefe4ee",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "f3e1e65f-cf92-4d4a-baad-36c82bb83594"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "26837169-a401-4d19-b1c1-f6888f3dbd59",
+          "id": 712,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -266,6 +286,7 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "2574753f-8c89-4a77-90a3-60a0407005f7",
               "id": 8537
             },
@@ -294,6 +315,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "6c327b6a-e1a5-4d67-ac0c-89153130526b",
               "id": 8536
             }
@@ -306,11 +328,18 @@
               "sourceStep": "/api/3/workflow_steps/6c327b6a-e1a5-4d67-ac0c-89153130526b",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "3a5aea4a-cc8b-485b-89c7-10b40add3c6a"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "3e8a8d84-7088-41be-8b26-815c931a89a8",
+          "id": 713,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -365,6 +394,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "8a9902b9-86c6-4ee1-8f0d-4bd0291b89a5",
               "id": 8539
             },
@@ -399,6 +429,7 @@
               "top": "120",
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "dc054830-dc9b-42b4-8747-0d67901dc01b",
               "id": 8538
             }
@@ -411,11 +442,18 @@
               "sourceStep": "/api/3/workflow_steps/8a9902b9-86c6-4ee1-8f0d-4bd0291b89a5",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "507aa754-ca34-4592-8f5e-2dee643b2cce"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "80d69a76-adb8-493d-897e-5b6eafae0d04",
+          "id": 714,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -474,6 +512,7 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "8cefb0e6-9ccf-44e6-b732-bb7c84c06bd8",
               "id": 8540
             },
@@ -502,6 +541,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "e6b236d7-84ff-4acd-878a-e25ea888b4c7",
               "id": 8541
             }
@@ -514,11 +554,18 @@
               "sourceStep": "/api/3/workflow_steps/e6b236d7-84ff-4acd-878a-e25ea888b4c7",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "9c6e0d4f-644a-4cb4-a8d9-570fc8c0b8df"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "8676b0ea-eef9-4792-a3aa-156a0711997c",
+          "id": 715,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -583,6 +630,7 @@
               "top": "140",
               "left": "200",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "346fdc76-9a76-4562-9014-8d7c5a7a3a33",
               "id": 8545
             },
@@ -608,6 +656,7 @@
               "top": "440",
               "left": "600",
               "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "group": null,
               "uuid": "34bb8f88-b478-4167-862f-de0cac972abd",
               "id": 8543
             },
@@ -626,6 +675,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
               "uuid": "61ff2660-a260-47ee-9202-baa7f99f4eb5",
               "id": 8542
             },
@@ -640,6 +690,7 @@
               "top": "300",
               "left": "420",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
               "uuid": "7c33e60f-38f0-45ae-a794-d3b584249859",
               "id": 8544
             }
@@ -652,6 +703,7 @@
               "sourceStep": "/api/3/workflow_steps/346fdc76-9a76-4562-9014-8d7c5a7a3a33",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "41a4a371-0a9b-4710-bc3b-86bfd2ef1a46"
             },
             {
@@ -661,6 +713,7 @@
               "sourceStep": "/api/3/workflow_steps/61ff2660-a260-47ee-9202-baa7f99f4eb5",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "7d01dbf0-6045-457f-b4cd-beb45d9c2ee4"
             },
             {
@@ -670,11 +723,18 @@
               "sourceStep": "/api/3/workflow_steps/7c33e60f-38f0-45ae-a794-d3b584249859",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "cb356e1c-ffbc-4dda-acb4-b9d0d7b3fde6"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "8bf6d636-9604-416b-832f-059fa9835520",
+          "id": 716,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "dataingestion",
             "Claroty"
@@ -730,6 +790,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "20973c61-9269-4237-a194-f427cd592bf7",
               "id": 8547
             },
@@ -759,6 +820,7 @@
               "top": "120",
               "left": "180",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "4a712993-75d3-44cf-a412-376e7ca67e9f",
               "id": 8546
             }
@@ -771,11 +833,18 @@
               "sourceStep": "/api/3/workflow_steps/20973c61-9269-4237-a194-f427cd592bf7",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "ba2baa0e-f360-4e51-801f-9bffa81e97fa"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "912250fc-8b91-4a82-b023-87c6984d9488",
+          "id": 717,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -800,7 +869,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666087154,
+          "lastModifyDate": 1681118898,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/12f9618c-4617-42d5-be4f-4586a48a1401",
@@ -830,6 +899,7 @@
               "top": "30",
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "12f9618c-4617-42d5-be4f-4586a48a1401",
               "id": 8548
             },
@@ -853,6 +923,7 @@
               "top": "440",
               "left": "800",
               "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+              "group": null,
               "uuid": "33a84f33-cd3a-4877-a04c-8214e6bfe290",
               "id": 8551
             },
@@ -880,6 +951,7 @@
               "top": "560",
               "left": "960",
               "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "group": null,
               "uuid": "444828e0-9c7f-4614-8657-73177291d7ba",
               "id": 8553
             },
@@ -898,6 +970,7 @@
               "top": "120",
               "left": "280",
               "stepType": "/api/3/workflow_step_types/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+              "group": null,
               "uuid": "4af6ada1-1998-4a3c-8994-d2f8fdeb733a",
               "id": 8552
             },
@@ -956,25 +1029,13 @@
                     "itemValue": "Open",
                     "orderIndex": 1
                   },
-                  "severity": "{{vars.item[\"severity\"] | resolveRange(vars.alerts_severity_map)}}",
+                  "severity": "{{\"Severity\" | picklist(vars.item['severity__'][1:], \"@id\")}}",
                   "sourceId": "{{vars.item[\"resource_id\"]}}",
                   "__replace": "true",
                   "eventTime": "{{vars.item[\"timestamp\"]}}",
                   "sourcedata": "{{vars.item | toJSON }}",
                   "description": "Score: {{vars.item[\"score\"]}}\n\nType: {{vars.item[\"type\"]}}\n\nNetwork ID: {{vars.item[\"network\"][\"id\"]}}\n\nNetwork Name: {{vars.item[\"network\"][\"name\"]}}\n\nCategory: {{vars.item[\"category__\"]}}\n\nDescription: {{vars.item[\"description\"]}}\n\n\n",
-                  "ackSlaStatus": {
-                    "id": 7,
-                    "@id": "/api/3/picklists/090115d7-90fc-4dc6-97ca-27950fc30c1c",
-                    "icon": null,
-                    "uuid": "090115d7-90fc-4dc6-97ca-27950fc30c1c",
-                    "@type": "Picklist",
-                    "color": "#14b341",
-                    "display": "Met",
-                    "@context": "/api/3/contexts/Picklist",
-                    "listName": "/api/3/picklist_names/fe36a8f2-fcba-4221-b4ab-1081f596b153",
-                    "itemValue": "Met",
-                    "orderIndex": 0
-                  },
+                  "ackSlaStatus": "/api/3/picklists/72979f64-e8b9-4888-a965-957e0ec24818",
                   "closureReason": {
                     "id": 250,
                     "@id": "/api/3/picklists/8590c81e-3307-4645-97f5-c3e1bec4e05a",
@@ -1001,6 +1062,7 @@
                     "itemValue": "Met",
                     "orderIndex": 0
                   },
+                  "priorityWeight": 1,
                   "escalatedtoincident": {
                     "id": 31,
                     "@id": "/api/3/picklists/2128a09c-153d-4db3-985d-de6be33deae5",
@@ -1013,7 +1075,9 @@
                     "listName": "/api/3/picklist_names/e131cc54-9ae4-43c9-b830-af6e331fe024",
                     "itemValue": "No",
                     "orderIndex": 1
-                  }
+                  },
+                  "resolvedAutomatedly": false,
+                  "alertRemainingAckSLA": 0
                 },
                 "_showJson": true,
                 "operation": "Overwrite",
@@ -1028,6 +1092,7 @@
               "top": "320",
               "left": "640",
               "stepType": "/api/3/workflow_step_types/2597053c-e718-44b4-8394-4d40fe26d357",
+              "group": null,
               "uuid": "4c90ba2e-ee3a-4013-a12b-1eec350afce4",
               "id": 8549
             },
@@ -1039,7 +1104,6 @@
                 "alerts_type_map": "{}",
                 "alerts_state_map": "{}",
                 "alerts_status_map": "{}",
-                "alerts_severity_map": "{'0,3': {{'Severity'| picklist('Low') }}, '4,6': {{'Severity'| picklist('Medium') }}, '7,8': {{'Severity'| picklist('High') }}, '9,10': {{'Severity'| picklist('Critical') }}}",
                 "alerts_ackSlaStatus_map": "{}",
                 "alerts_closureReason_map": "{}",
                 "alerts_respSlaStatus_map": "{}",
@@ -1049,6 +1113,7 @@
               "top": "220",
               "left": "480",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
               "uuid": "a4e8d35a-82cd-4a7f-9b70-f608a9204122",
               "id": 8550
             }
@@ -1061,6 +1126,7 @@
               "sourceStep": "/api/3/workflow_steps/4c90ba2e-ee3a-4013-a12b-1eec350afce4",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "6d360c04-c79f-485a-af1a-021d176ef84c"
             },
             {
@@ -1070,6 +1136,7 @@
               "sourceStep": "/api/3/workflow_steps/a4e8d35a-82cd-4a7f-9b70-f608a9204122",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "92e8d37b-8747-46ff-8732-05a099ffd792"
             },
             {
@@ -1079,6 +1146,7 @@
               "sourceStep": "/api/3/workflow_steps/12f9618c-4617-42d5-be4f-4586a48a1401",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "a465b383-057c-41cc-89e6-e26a0698e9a5"
             },
             {
@@ -1088,6 +1156,7 @@
               "sourceStep": "/api/3/workflow_steps/33a84f33-cd3a-4877-a04c-8214e6bfe290",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "bb52ddf3-ce2a-412e-9e55-e07239e65d40"
             },
             {
@@ -1097,11 +1166,18 @@
               "sourceStep": "/api/3/workflow_steps/4af6ada1-1998-4a3c-8994-d2f8fdeb733a",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "d3dbb926-2bb7-4916-b880-d42c45faed18"
             }
           ],
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "b1a96a4e-6179-4dfd-8228-18f26c8f02b9",
+          "id": 718,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "dataingestion",
             "create",
@@ -1129,7 +1205,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666257315,
+          "lastModifyDate": 1681118234,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/23d7566f-a791-4ba2-bff2-6badff10278f",
@@ -1163,6 +1239,7 @@
               "top": "480",
               "left": "800",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "08626030-9893-42e4-9ff6-29e432586719",
               "id": 8554
             },
@@ -1182,6 +1259,7 @@
               "top": "40",
               "left": "80",
               "stepType": "/api/3/workflow_step_types/b348f017-9a94-471f-87f8-ce88b6a7ad62",
+              "group": null,
               "uuid": "23d7566f-a791-4ba2-bff2-6badff10278f",
               "id": 8555
             },
@@ -1200,6 +1278,7 @@
               "top": "140",
               "left": "240",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
               "uuid": "28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
               "id": 8557
             },
@@ -1223,6 +1302,7 @@
               "top": "240",
               "left": "420",
               "stepType": "/api/3/workflow_step_types/0109f35d-090b-4a2b-bd8a-94cbc3508562",
+              "group": null,
               "uuid": "88867266-b23c-42b0-9a24-75bb67be1438",
               "id": 8556
             },
@@ -1239,6 +1319,7 @@
               "top": "360",
               "left": "600",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
               "uuid": "d0ad8b66-2326-44a0-af39-a7119d579a7f",
               "id": 8558
             },
@@ -1256,6 +1337,7 @@
               "top": "620",
               "left": "1000",
               "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+              "group": null,
               "uuid": "ed1ee218-fe9c-4918-bd56-e11e54e3d6ac",
               "id": 8559
             }
@@ -1268,6 +1350,7 @@
               "sourceStep": "/api/3/workflow_steps/28dacf97-8e0b-4c68-8b97-5759ccbf87d7",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "743203df-94d8-4404-b6de-00a00ec8c1a3"
             },
             {
@@ -1277,6 +1360,7 @@
               "sourceStep": "/api/3/workflow_steps/d0ad8b66-2326-44a0-af39-a7119d579a7f",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "93a8efab-1b92-430b-8f7c-ebc8ba1b661e"
             },
             {
@@ -1286,6 +1370,7 @@
               "sourceStep": "/api/3/workflow_steps/88867266-b23c-42b0-9a24-75bb67be1438",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "9be795cd-00aa-4c6e-a501-e951a56321ec"
             },
             {
@@ -1295,6 +1380,7 @@
               "sourceStep": "/api/3/workflow_steps/08626030-9893-42e4-9ff6-29e432586719",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "dfc18c90-1c99-4d48-931c-389287268f9e"
             },
             {
@@ -1304,12 +1390,20 @@
               "sourceStep": "/api/3/workflow_steps/23d7566f-a791-4ba2-bff2-6badff10278f",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "fcbdf943-0981-462b-87b1-cfcc4aa14b42"
             }
           ],
+          "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
           "uuid": "c8d134aa-6306-48bb-8dff-d4f650dddee5",
+          "id": 719,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
+            "Claroty",
             "dataingestion",
             "fetch",
             "Claroty"
@@ -1365,6 +1459,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "48013622-2205-4a74-ad92-1600f8754f88",
               "id": 8562
             },
@@ -1394,6 +1489,7 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "ba661651-cfd1-4b01-afcd-01410e7f78c7",
               "id": 8561
             }
@@ -1406,11 +1502,18 @@
               "sourceStep": "/api/3/workflow_steps/48013622-2205-4a74-ad92-1600f8754f88",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "71d63690-01ea-4967-a6a1-7c24cb89f8a6"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "d22e49bb-baae-4401-bffd-4a252aa386b1",
+          "id": 720,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
@@ -1435,7 +1538,7 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1666087154,
+          "lastModifyDate": 1680619358,
           "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
           "versions": [],
           "triggerStep": "/api/3/workflow_steps/4e9f6839-6183-4cad-80d5-dd7463abe56b",
@@ -1462,6 +1565,7 @@
               "top": "120",
               "left": "188",
               "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
               "uuid": "34bc0398-ae42-4d69-9558-5cbaef2bbb24",
               "id": 8563
             },
@@ -1490,6 +1594,7 @@
               "top": "20",
               "left": "20",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
               "uuid": "4e9f6839-6183-4cad-80d5-dd7463abe56b",
               "id": 8564
             }
@@ -1502,11 +1607,18 @@
               "sourceStep": "/api/3/workflow_steps/4e9f6839-6183-4cad-80d5-dd7463abe56b",
               "label": null,
               "isExecuted": false,
+              "group": null,
               "uuid": "5bcb1c37-2773-43e8-bbaa-7ac1c9e34ecc"
             }
           ],
+          "groups": [],
           "priority": null,
           "uuid": "e85db9fd-0e8b-4b37-a3b7-453be5b2977e",
+          "id": 721,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
           "recordTags": [
             "Claroty"
           ],
