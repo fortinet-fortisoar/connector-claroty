@@ -1504,27 +1504,32 @@
       "operation": "get_insight_details",
       "category": "investigation",
       "annotation": "get_insight_details",
-      "output_schema": [
-        {
-          "name": "",
-          "headers": [
-            {
-              "name": "",
-              "type": "",
-              "hidden": "",
-              "sortable": "",
-              "header_num": ""
+      "output_schema": {
+        "count_total": "",
+        "current_page": "",
+        "description": "",
+        "headers": [
+          {
+            "header_num": "",
+            "hidden": "",
+            "name": "",
+            "sortable": "",
+            "type": ""
+          }
+        ],
+        "name": "",
+        "per_page": "",
+        "rows": [
+          {
+            "assets_count": "",
+            "cells": [],
+            "row_filter": {
+              "display_msg": "",
+              "filter_key": ""
             }
-          ],
-          "severity": "",
-          "description": "",
-          "default_sort": "",
-          "other_side_name": "",
-          "other_side_headers": [],
-          "aggregated_description": "",
-          "other_side_default_sort": ""
-        }
-      ],
+          }
+        ]
+      },
       "title": "Get Insight Details",
       "description": "Retrieves details of a specific insight from Claroty based on the insight name you have specified. ",
       "enabled": true,
