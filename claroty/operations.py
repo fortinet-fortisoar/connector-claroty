@@ -106,6 +106,8 @@ def get_assets(config, params):
                                   'timestamp__gte': params.get('timestamp__gte'),
                                   'timestamp__lte': params.get('timestamp__lte'),
                                   })
+    if params.get('format'):
+        params['format'] = FORMAT.get(params.get('format'), 'asset_list')
     return fetch_data_from_server(config, params, endpoint='/ranger/assets')
 
 
@@ -123,7 +125,7 @@ def fetch_data_from_server(config, params, endpoint):
         if params.get('page'):
             data['page'] = params.get('page')
         if params.get('format'):
-            data['format'] = FORMAT.get(params.get('format'), 'asset_list')
+            data['format'] = params.get('format')
         res = claroty_obj.make_rest_call(endpoint=endpoint, method='GET', params=data, header=header)
         return res
     except Exception as err:
@@ -213,6 +215,16 @@ def get_events(config, params):
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
+def get_insight_details(config, params):
+    endpoint = '/ranger/insight_details/{insight_name}'.format(insight_name=params.get('insight_name'))
+    filters_dict = {
+        'ghost__exact': params.get('ghost__exact'),
+        'site_id__exact': params.get('site_id__exact'),
+        'special_hint__exact': params.get('special_hint__exact'),
+        'insight_status__exact': params.get('insight_status__exact')
+    }
+    params['filters'] = filters_dict
+    return fetch_data_from_server(config, params, endpoint)
 
 def check_health(config):
     try:
@@ -233,5 +245,6 @@ operations = {
     'get_tasks': get_tasks,
     'get_queries': get_queries,
     'get_insights': get_insights,
-    'get_events': get_events
+    'get_events': get_events,
+    'get_insight_details': get_insight_details
 }

@@ -5,7 +5,7 @@
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
-  "version": "1.0.1",
+  "version": "1.1.0",
   "category": "OT & IoT Security",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
@@ -1499,6 +1499,124 @@
           "description": "Page number from which page you wants to fetch the response"
         }
       ]
+    },
+    {
+      "operation": "get_insight_details",
+      "category": "investigation",
+      "annotation": "get_insight_details",
+      "output_schema": [
+        {
+          "name": "",
+          "headers": [
+            {
+              "name": "",
+              "type": "",
+              "hidden": "",
+              "sortable": "",
+              "header_num": ""
+            }
+          ],
+          "severity": "",
+          "description": "",
+          "default_sort": "",
+          "other_side_name": "",
+          "other_side_headers": [],
+          "aggregated_description": "",
+          "other_side_default_sort": ""
+        }
+      ],
+      "title": "Get Insight Details",
+      "description": "Retrieves details of a specific insight from Claroty based on the insight name you have specified. ",
+      "enabled": true,
+      "parameters": [
+        {
+          "title": "Insight Name",
+          "type": "text",
+          "name": "insight_name",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": "",
+          "tooltip": "Specify the insight name you want to retrieve from Claroty."
+        },
+        {
+          "title": "Format",
+          "type": "text",
+          "name": "format",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "value": "insight_page",
+          "tooltip": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g insight_page"
+        },
+        {
+          "title": "Page",
+          "type": "integer",
+          "name": "page",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Page number from which page you wants to fetch the response"
+        },
+        {
+          "title": "Limit",
+          "type": "integer",
+          "name": "per_page",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The maximum number of results, per page, that this operation should return."
+        },
+        {
+          "title": "Site ID",
+          "type": "text",
+          "name": "site_id__exact",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Filter response data based on input site ID"
+        },
+        {
+          "title": "Host Exact",
+          "type": "checkbox",
+          "name": "ghost__exact",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Filter response data whose host exact matches input string"
+        },
+        {
+          "title": "Special Hint Exact",
+          "type": "select",
+          "name": "special_hint__exact",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4",
+          "options": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "title": "Insight Status Exact",
+          "type": "select",
+          "name": "insight_status__exact",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Select the insight status to filter the response based on it. Available values are 0,1,2",
+          "options": [
+            "0",
+            "1",
+            "2"
+          ]
+        }
+      ],
+      "open": false
     }
   ]
 }

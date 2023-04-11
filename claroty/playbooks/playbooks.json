@@ -3,7 +3,7 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Claroty - 1.0.0",
+      "name": "Sample - Claroty - 1.1.0",
       "description": "Sample playbooks for \"Claroty\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": "/api/3/images/64c908a3-fdb4-44dc-aa3d-7434f85542d4",
@@ -1405,8 +1405,7 @@
           "recordTags": [
             "Claroty",
             "dataingestion",
-            "fetch",
-            "Claroty"
+            "fetch"
           ],
           "id": 3160,
           "createUser": "/api/3/appliances/57545210-2adc-472b-a24f-2df6ee8dfe63",
@@ -1414,7 +1413,7 @@
           "modifyUser": "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce",
           "modifyDate": 1666257315,
           "owners": [],
-          "isPrivate": false
+          "isPrivate": false 
         },
         {
           "@type": "Workflow",
@@ -1629,6 +1628,109 @@
           "modifyDate": 1666248652,
           "owners": [],
           "isPrivate": false
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Insights Details",
+          "aliasName": null,
+          "tag": "#Claroty",
+          "description": "Get summary of an insights based on insight name you have provided.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1681193219,
+          "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/6fd1be49-d8b5-4f34-b3b6-2924916cf358",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "8fd4303b-0b38-4166-a325-01efe0def2f9",
+                "title": "Claroty: Get Insights",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "20",
+              "left": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "6fd1be49-d8b5-4f34-b3b6-2924916cf358"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Insights Details",
+              "description": null,
+              "arguments": {
+                "name": "Claroty",
+                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
+                "params": {
+                  "page": "",
+                  "format": "insight_page",
+                  "per_page": "",
+                  "ghost__exact": "",
+                  "insight_name": "Full Match CVEs",
+                  "site_id__exact": "",
+                  "special_hint__exact": "",
+                  "insight_status__exact": ""
+                },
+                "version": "1.1.0",
+                "connector": "claroty",
+                "operation": "get_insight_details",
+                "operationTitle": "Get Insight Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "120",
+              "left": "188",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "c93bb1f3-ec06-487c-8d70-43c8ecad3f42"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Insights",
+              "targetStep": "/api/3/workflow_steps/c93bb1f3-ec06-487c-8d70-43c8ecad3f42",
+              "sourceStep": "/api/3/workflow_steps/6fd1be49-d8b5-4f34-b3b6-2924916cf358",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "74b55c30-e1f2-4d02-ba65-5cef45a35c4f"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "6b9b730c-f9cf-417b-b128-ce6f0925b391",
+          "id": 842,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Claroty"
+          ]
         }
       ]
     }
