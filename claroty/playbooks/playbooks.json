@@ -1731,6 +1731,102 @@
           "recordTags": [
             "Claroty"
           ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Asset Risks And Vulnerabilities",
+          "aliasName": null,
+          "tag": "#Claroty",
+          "description": "Get Risks and Vulnerabilities of an asset based on resource ID of an asset you have provided.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1681206504,
+          "collection": "/api/3/workflow_collections/8370a01d-a451-4ef2-bbbe-73f1538795a9",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/d6f4e1b6-5253-446f-881a-2ebd91957b1a",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Alerts",
+              "description": null,
+              "arguments": {
+                "route": "8377ab66-73b4-4b45-816b-5fe311974ee7",
+                "title": "Claroty: Get Asset Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "d6f4e1b6-5253-446f-881a-2ebd91957b1a"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Asset Risks And Vulnerabilities",
+              "description": null,
+              "arguments": {
+                "name": "Claroty",
+                "config": "5393c8c1-36dd-413b-b6b2-1dc1de329995",
+                "params": {
+                  "resource_id": "1-1"
+                },
+                "version": "1.1.0",
+                "connector": "claroty",
+                "operation": "get_asset_risks_and_vulnerabilities",
+                "operationTitle": "Get Asset Risks And Vulnerabilities",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "status": null,
+              "top": "140",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "8d26898d-6d31-4ddc-b4e5-708bf4db34ad"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Alerts -> Get Asset Details",
+              "targetStep": "/api/3/workflow_steps/8d26898d-6d31-4ddc-b4e5-708bf4db34ad",
+              "sourceStep": "/api/3/workflow_steps/d6f4e1b6-5253-446f-881a-2ebd91957b1a",
+              "label": null,
+              "isExecuted": false,
+              "group": null,
+              "uuid": "2e5a1531-f046-47e4-9ba7-267872d6a5a5"
+            }
+          ],
+          "groups": [],
+          "priority": null,
+          "uuid": "313422f4-38f8-4f57-9dc8-9ead131dfd70",
+          "id": 900,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "Claroty"
+          ]
         }
       ]
     }

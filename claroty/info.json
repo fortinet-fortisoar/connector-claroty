@@ -1624,10 +1624,10 @@
       "open": false
     },
     {
-      "operation": "get_asset_risk_and_vulnerabilites",
-      "title": "Get Asset Risk And Vulnerabilites",
-      "annotation": "get_asset_risk_and_vulnerabilites",
-      "description": "descriptionTextField",
+      "operation": "get_asset_risks_and_vulnerabilities",
+      "title": "Get Asset Risks And Vulnerabilities",
+      "annotation": "get_asset_risks_and_vulnerabilities",
+      "description": "Retrieves risks and vulnerabilities of a specific asset from Claroty based on the asset's resource ID you have specified",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
@@ -1653,7 +1653,7 @@
           "editable": true,
           "visible": true,
           "required": true,
-          "tooltip": "Specifiy asset resource id to get risks and vulnerabilites.",
+          "tooltip": "Specifiy asset resource id to get risks and vulnerabilities.",
           "description": ""
         }
       ]

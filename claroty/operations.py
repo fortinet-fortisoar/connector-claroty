@@ -226,7 +226,7 @@ def get_insight_details(config, params):
     params['filters'] = filters_dict
     return fetch_data_from_server(config, params, endpoint)
 
-def get_asset_risk_and_vulnerabilites(config, params):
+def get_asset_risks_and_vulnerabilities(config, params):
     endpoint = "/ranger/lazy_loaded/{id}/asset/risk_vectors".format(id=params.get('resource_id'))
     return fetch_data_from_server(config, params, endpoint)
 
@@ -251,5 +251,5 @@ operations = {
     'get_insights': get_insights,
     'get_events': get_events,
     'get_insight_details': get_insight_details,
-    'get_asset_risk_and_vulnerabilites': get_asset_risk_and_vulnerabilites
+    'get_asset_risks_and_vulnerabilities': get_asset_risks_and_vulnerabilities
 }
