@@ -1,5 +1,5 @@
 #### What's Added
-
-## Data ingestion 
-- Set alert severity in accordance with Claroty.
-- Alert creation tagged with default values for "Ack SLA" and "Response SLA" fields.
+  
+- Added new action "Get Insight Details"
+- In Data ingestion set alert severity in accordance with Claroty.
+- In Data ingestion alert creation tagged with default values for "Ack SLA" and "Response SLA" fields.
