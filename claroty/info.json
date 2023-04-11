@@ -1622,6 +1622,41 @@
         }
       ],
       "open": false
+    },
+    {
+      "operation": "get_asset_risk_and_vulnerabilites",
+      "title": "Get Asset Risk And Vulnerabilites",
+      "annotation": "get_asset_risk_and_vulnerabilites",
+      "description": "descriptionTextField",
+      "category": "investigation",
+      "is_config_required": true,
+      "visible": true,
+      "enabled": true,
+      "output_schema": [
+        {
+          "name": "",
+          "score": "",
+          "scale": "",
+          "details": [
+            {
+              "title": "",
+              "description": ""
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "name": "resource_id",
+          "title": "Asset Resource Id",
+          "type": "text",
+          "editable": true,
+          "visible": true,
+          "required": true,
+          "tooltip": "Specifiy asset resource id to get risks and vulnerabilites.",
+          "description": ""
+        }
+      ]
     }
   ]
 }
