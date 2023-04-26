@@ -1531,7 +1531,7 @@
         ]
       },
       "title": "Get Insight Details",
-      "description": "Retrieves details of a specific insight from Claroty based on the insight name you have specified. ",
+      "description": "Retrieves details of a specific insight from Claroty based on specified insight name.",
       "enabled": true,
       "parameters": [
         {
@@ -1635,7 +1635,7 @@
       "operation": "get_asset_risks_and_vulnerabilities",
       "title": "Get Asset Risks And Vulnerabilities",
       "annotation": "get_asset_risks_and_vulnerabilities",
-      "description": "Retrieves risks and vulnerabilities of a specific asset from Claroty based on the asset's resource ID you have specified",
+      "description": "Retrieves risks and vulnerabilities of a specific asset from Claroty based on specified asset's resource ID.",
       "category": "investigation",
       "is_config_required": true,
       "visible": true,
