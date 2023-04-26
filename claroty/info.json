@@ -1542,7 +1542,8 @@
           "visible": true,
           "editable": true,
           "value": "",
-          "tooltip": "Specify the insight name you want to retrieve from Claroty."
+          "tooltip": "Specify the insight name you want to retrieve from Claroty.",
+          "description": "Specify the insight name you want to retrieve from Claroty."
         },
         {
           "title": "Format",
@@ -1552,34 +1553,8 @@
           "visible": true,
           "editable": true,
           "value": "insight_page",
-          "tooltip": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g insight_page"
-        },
-        {
-          "title": "Page",
-          "type": "integer",
-          "name": "page",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Page number from which page you wants to fetch the response"
-        },
-        {
-          "title": "Limit",
-          "type": "integer",
-          "name": "per_page",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "The maximum number of results, per page, that this operation should return."
-        },
-        {
-          "title": "Site ID",
-          "type": "text",
-          "name": "site_id__exact",
-          "required": false,
-          "visible": true,
-          "editable": true,
-          "tooltip": "Filter response data based on input site ID"
+          "tooltip": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g insight_page",
+          "description": "Specify the format of the insights whose summaries you want to retrieve from Claroty. e.g. insight_page"
         },
         {
           "title": "Host Exact",
@@ -1588,7 +1563,8 @@
           "required": false,
           "visible": true,
           "editable": true,
-          "tooltip": "Filter response data whose host exact matches input string"
+          "tooltip": "Filter response data whose host exact matches input string",
+          "description": "Select this option if you want to filter the response data retrieved from Claroty to that which exactly matches the host specified in the input string."
         },
         {
           "title": "Special Hint Exact",
@@ -1598,6 +1574,7 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the special hint to filter the response based on it. Available values are 0,1,2,3,4",
+          "description": "Select the special hint using which you want to filter the response retrieved from Claroty. You can choose from the following options: 0, 1, 2, 3, or 4.",
           "options": [
             "0",
             "1",
@@ -1614,11 +1591,42 @@
           "visible": true,
           "editable": true,
           "tooltip": "Select the insight status to filter the response based on it. Available values are 0,1,2",
+          "description": "Select the insight status using which you want to filter the response retrieved from Claroty. You can choose from the following options: 0, 1, or 2. ",
           "options": [
             "0",
             "1",
             "2"
           ]
+        },
+        {
+          "title": "Site ID",
+          "type": "text",
+          "name": "site_id__exact",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Filter response data based on input site ID",
+          "description": "The ID of the site using which you want to filter insights retrieved from Claroty. "
+        },
+        {
+          "title": "Limit",
+          "type": "integer",
+          "name": "per_page",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "The maximum number of results, per page, that this operation should return.",
+          "description": "The maximum number of results, per page, that this operation should return."
+        },
+        {
+          "title": "Page",
+          "type": "integer",
+          "name": "page",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Page number from which page you wants to fetch the response",
+          "description": "Page number from which page you wants to fetch the response"
         }
       ],
       "open": false
@@ -1654,7 +1662,7 @@
           "visible": true,
           "required": true,
           "tooltip": "Specifiy asset resource id to get risks and vulnerabilities.",
-          "description": ""
+          "description": "Specifiy asset resource id to get risks and vulnerabilities."
         }
       ]
     }
