@@ -1,10 +1,5 @@
 #### What's Added
-- Added following actions and its playbooks
-  - Get Assets
-  - Get Asset Details
-  - Get Alerts
-  - Get Alert Details
-  - Get Tasks
-  - Get Queries
-  - Get Insights
-  - Get Events
+  
+- Added new action "Get Insight Details" and "Get Asset Risks And Vulnerabilites"
+- In Data ingestion set alert severity in accordance with Claroty.
+- In Data ingestion alert creation tagged with default values for "Ack SLA" and "Response SLA" fields.
