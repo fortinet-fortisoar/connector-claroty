@@ -53,7 +53,7 @@
                   "protocol__exact": [],
                   "criticality__exact": []
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_assets",
                 "operationTitle": "Get Assets",
@@ -169,7 +169,7 @@
                   ],
                   "resolution__exact": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_alerts",
                 "operationTitle": "Get Alerts",
@@ -274,7 +274,7 @@
                 "params": {
                   "resource_id": "9-1"
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_alert_details",
                 "operationTitle": "Get Alert Details",
@@ -417,7 +417,7 @@
                   "timestamp__exact": "",
                   "description__contains": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_events",
                 "operationTitle": "Get Events",
@@ -500,7 +500,7 @@
                   "special_hint__exact": "",
                   "insight_status__exact": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_insights",
                 "operationTitle": "Get Insights",
@@ -617,7 +617,7 @@
                   "timestamp__exact": "",
                   "description__contains": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_events",
                 "operationTitle": "Get Events",
@@ -808,7 +808,7 @@
                   "site_id__exact": "",
                   "name__icontains": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_tasks",
                 "operationTitle": "Get Tasks",
@@ -1228,7 +1228,7 @@
                   "severity__exact": "{{vars.severity__exact}}",
                   "resolution__exact": "{{vars.resolution__exact}}"
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_alerts",
                 "operationTitle": "Get Alerts",
@@ -1476,7 +1476,7 @@
                   "site_id__exact": "",
                   "name__icontains": ""
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_queries",
                 "operationTitle": "Get Queries",
@@ -1552,7 +1552,7 @@
                 "params": {
                   "resource_id": "1-1"
                 },
-                "version": "1.0.0",
+                "version": "1.1.0",
                 "connector": "claroty",
                 "operation": "get_asset_details",
                 "operationTitle": "Get Asset Details",
